@@ -6,3 +6,4 @@ war/WEB-INF/lib/*
 .gwt/*
 war/WEB-INF/deploy/*
 *.class
+war/cpvsports/*

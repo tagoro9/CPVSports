@@ -1,0 +1,2787 @@
+/********************** ESTILO clean.css ************************/
+
+
+body, table td, select, button {
+  font-family:'Arial Unicode MS', Arial, sans-serif;
+  font-size:small;
+}
+pre {
+  font-family:'courier new', courier;
+  font-size:small;
+}
+/*
+body {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:#FFFFFF;
+  background-image:initial;
+  background-origin:initial;
+  background-position:initial initial;
+  background-repeat:initial initial;
+  border-bottom-width:0;
+  border-color:initial;
+  border-image:initial;
+  border-left-width:0;
+  border-right-width:0;
+  border-style:initial;
+  border-top-width:0;
+  color:black;
+  direction:ltr;
+  margin-bottom:10px;
+  margin-left:10px;
+  margin-right:10px;
+  margin-top:10px;
+  padding-bottom:0;
+  padding-left:0;
+  padding-right:0;
+  padding-top:0;
+}*/
+a, a:visited {
+  color:#0066CC;
+  text-decoration:none;
+}
+a:hover {
+  color:#0066CC;
+  text-decoration:underline;
+}
+select {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:white;
+  background-image:initial;
+  background-origin:initial;
+  background-position:initial initial;
+  background-repeat:initial initial;
+}
+.gwt-Reference-clean {
+  height:5px;
+  width:5px;
+  zoom:1;
+}
+.gwt-Button {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:initial;
+  background-image:url(http://127.0.0.1:8888/cpvsports/gwt/clean/images/hborder.png);
+  background-origin:initial;
+  background-position:0 -2077px;
+  background-repeat:repeat no-repeat;
+  border-bottom-color:#A0A0A0;
+  border-bottom-left-radius:3px;
+  border-bottom-right-radius:3px;
+  border-bottom-style:solid;
+  border-bottom-width:1px;
+  border-image:initial;
+  border-left-color:#BBBBBB;
+  border-left-style:solid;
+  border-left-width:1px;
+  border-right-color:#BBBBBB;
+  border-right-style:solid;
+  border-right-width:1px;
+  border-top-color:#BBBBBB;
+  border-top-left-radius:3px;
+  border-top-right-radius:3px;
+  border-top-style:solid;
+  border-top-width:1px;
+  cursor:pointer;
+  font-size:small;
+  margin-bottom:0;
+  margin-left:0;
+  margin-right:0;
+  margin-top:0;
+  padding-bottom:5px;
+  padding-left:7px;
+  padding-right:7px;
+  padding-top:5px;
+  text-decoration:none;
+}
+.gwt-Button:active {
+  border-bottom-color:#CCCCCC;
+  border-bottom-style:inset;
+  border-bottom-width:1px;
+  border-image:initial;
+  border-left-color:#CCCCCC;
+  border-left-style:inset;
+  border-left-width:1px;
+  border-right-color:#CCCCCC;
+  border-right-style:inset;
+  border-right-width:1px;
+  border-top-color:#CCCCCC;
+  border-top-style:inset;
+  border-top-width:1px;
+}
+.gwt-Button:hover {
+  border-bottom-color:#939393;
+  border-left-color:#939393;
+  border-right-color:#939393;
+  border-top-color:#939393;
+}
+.gwt-Button[disabled] {
+  color:#888888;
+  cursor:default;
+}
+.gwt-Button[disabled]:hover {
+  border-bottom-color:#CCCCCC;
+  border-bottom-style:outset;
+  border-bottom-width:1px;
+  border-image:initial;
+  border-left-color:#CCCCCC;
+  border-left-style:outset;
+  border-left-width:1px;
+  border-right-color:#CCCCCC;
+  border-right-style:outset;
+  border-right-width:1px;
+  border-top-color:#CCCCCC;
+  border-top-style:outset;
+  border-top-width:1px;
+}
+.gwt-CheckBox {
+}
+.gwt-CheckBox-disabled {
+  color:#888888;
+}
+.gwt-DecoratorPanel {
+}
+.gwt-DecoratorPanel .topCenter {
+  border-top-color:#BBBBBB;
+  border-top-style:solid;
+  border-top-width:1px;
+  line-height:0;
+}
+.gwt-DecoratorPanel .bottomCenter {
+  border-bottom-color:#BBBBBB;
+  border-bottom-style:solid;
+  border-bottom-width:1px;
+  line-height:0;
+}
+.gwt-DecoratorPanel .topCenterInner, .gwt-DecoratorPanel .bottomCenterInner {
+  font-size:1px;
+  height:1px;
+  line-height:0;
+}
+.gwt-DecoratorPanel .middleLeft {
+  border-left-color:#BBBBBB;
+  border-left-style:solid;
+  border-left-width:1px;
+}
+.gwt-DecoratorPanel .middleRight {
+  border-right-color:#BBBBBB;
+  border-right-style:solid;
+  border-right-width:1px;
+}
+.gwt-DecoratorPanel .middleLeftInner, .gwt-DecoratorPanel .middleRightInner {
+  line-height:1px;
+  width:1px;
+}
+.gwt-DecoratorPanel .topLeftInner, .gwt-DecoratorPanel .topRightInner, .gwt-DecoratorPanel .bottomLeftInner, .gwt-DecoratorPanel .bottomRightInner {
+  font-size:1px;
+  height:5px;
+  overflow-x:hidden;
+  overflow-y:hidden;
+  width:5px;
+  zoom:1;
+}
+.gwt-DecoratorPanel .topLeft {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:initial;
+  background-image:url(http://127.0.0.1:8888/cpvsports/gwt/clean/images/circles.png);
+  background-origin:initial;
+  background-position:0 -6px;
+  background-repeat:no-repeat no-repeat;
+  line-height:0;
+}
+.gwt-DecoratorPanel .topRight {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:initial;
+  background-image:url(http://127.0.0.1:8888/cpvsports/gwt/clean/images/circles.png);
+  background-origin:initial;
+  background-position:-5px -6px;
+  background-repeat:no-repeat no-repeat;
+  line-height:0;
+}
+.gwt-DecoratorPanel .bottomLeft {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:initial;
+  background-image:url(http://127.0.0.1:8888/cpvsports/gwt/clean/images/circles.png);
+  background-origin:initial;
+  background-position:0 -11px;
+  background-repeat:no-repeat no-repeat;
+  line-height:0;
+}
+.gwt-DecoratorPanel .bottomRight {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:initial;
+  background-image:url(http://127.0.0.1:8888/cpvsports/gwt/clean/images/circles.png);
+  background-origin:initial;
+  background-position:-5px -11px;
+  background-repeat:no-repeat no-repeat;
+  line-height:0;
+}
+* html .gwt-DecoratorPanel .topLeftInner, * html .gwt-DecoratorPanel .topRightInner, * html .gwt-DecoratorPanel .bottomLeftInner, * html .gwt-DecoratorPanel .bottomRightInner {
+  height:5px;
+  overflow-x:hidden;
+  overflow-y:hidden;
+  width:5px;
+}
+.gwt-DialogBox .Caption {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:#F1F1F1;
+  background-image:initial;
+  background-origin:initial;
+  background-position:initial initial;
+  background-repeat:initial initial;
+  border-bottom-color:#BBBBBB;
+  border-bottom-style:solid;
+  border-bottom-width:1px;
+  border-top-color:#D2D2D2;
+  border-top-style:solid;
+  border-top-width:1px;
+  cursor:default;
+  font-family:'Arial Unicode MS', Arial, sans-serif;
+  font-weight:bold;
+  padding-bottom:4px;
+  padding-left:4px;
+  padding-right:8px;
+  padding-top:4px;
+}
+.gwt-DialogBox .dialogContent {
+}
+.gwt-DialogBox .dialogMiddleCenter {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:white;
+  background-image:initial;
+  background-origin:initial;
+  background-position:initial initial;
+  background-repeat:initial initial;
+  padding-bottom:3px;
+  padding-left:3px;
+  padding-right:3px;
+  padding-top:3px;
+}
+.gwt-DialogBox .dialogBottomCenter {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:initial;
+  background-image:url(http://127.0.0.1:8888/cpvsports/gwt/clean/images/hborder.png);
+  background-origin:initial;
+  background-position:0 -2945px;
+  background-repeat:repeat no-repeat;
+}
+.gwt-DialogBox .dialogMiddleLeft {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:initial;
+  background-image:url(http://127.0.0.1:8888/cpvsports/gwt/clean/images/vborder.png);
+  background-origin:initial;
+  background-position:-31px 0;
+  background-repeat:no-repeat repeat;
+}
+.gwt-DialogBox .dialogMiddleRight {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:initial;
+  background-image:url(http://127.0.0.1:8888/cpvsports/gwt/clean/images/vborder.png);
+  background-origin:initial;
+  background-position:-32px 0;
+  background-repeat:no-repeat repeat;
+}
+.gwt-DialogBox .dialogTopLeftInner {
+  height:8px;
+  width:10px;
+  zoom:1;
+}
+.gwt-DialogBox .dialogTopRightInner {
+  width:12px;
+  zoom:1;
+}
+.gwt-DialogBox .dialogBottomLeftInner {
+  height:12px;
+  width:10px;
+  zoom:1;
+}
+.gwt-DialogBox .dialogBottomRightInner {
+  height:12px;
+  width:12px;
+  zoom:1;
+}
+.gwt-DialogBox .dialogTopLeft {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:initial;
+  background-image:url(http://127.0.0.1:8888/cpvsports/gwt/clean/images/circles.png);
+  background-origin:initial;
+  background-position:-20px 0;
+  background-repeat:no-repeat no-repeat;
+}
+.gwt-DialogBox .dialogTopRight {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:initial;
+  background-image:url(http://127.0.0.1:8888/cpvsports/gwt/clean/images/circles.png);
+  background-origin:initial;
+  background-position:-28px 0;
+  background-repeat:no-repeat no-repeat;
+}
+.gwt-DialogBox .dialogBottomLeft {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:initial;
+  background-image:url(http://127.0.0.1:8888/cpvsports/gwt/clean/images/circles.png);
+  background-origin:initial;
+  background-position:0 -36px;
+  background-repeat:no-repeat no-repeat;
+}
+.gwt-DialogBox .dialogBottomRight {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:initial;
+  background-image:url(http://127.0.0.1:8888/cpvsports/gwt/clean/images/circles.png);
+  background-origin:initial;
+  background-position:-8px -36px;
+  background-repeat:no-repeat no-repeat;
+}
+* html .gwt-DialogBox .dialogTopLeftInner {
+  overflow-x:hidden;
+  overflow-y:hidden;
+  width:10px;
+}
+* html .gwt-DialogBox .dialogTopRightInner {
+  overflow-x:hidden;
+  overflow-y:hidden;
+  width:12px;
+}
+* html .gwt-DialogBox .dialogBottomLeftInner {
+  height:12px;
+  overflow-x:hidden;
+  overflow-y:hidden;
+  width:10px;
+}
+* html .gwt-DialogBox .dialogBottomRightInner {
+  height:12px;
+  overflow-x:hidden;
+  overflow-y:hidden;
+  width:12px;
+}
+.gwt-DisclosurePanel {
+}
+.gwt-DisclosurePanel-open {
+}
+.gwt-DisclosurePanel-closed {
+}
+.gwt-DisclosurePanel .header, .gwt-DisclosurePanel .header a, .gwt-DisclosurePanel .header td {
+  color:black;
+  cursor:pointer;
+  text-decoration:none;
+}
+.gwt-DisclosurePanel .content {
+  border-left-color:#E7E7E7;
+  border-left-style:solid;
+  border-left-width:3px;
+  margin-left:6px;
+  padding-bottom:4px;
+  padding-left:8px;
+  padding-right:0;
+  padding-top:4px;
+}
+.gwt-FileUpload {
+}
+.gwt-Frame {
+  border-bottom-color:#BBBBBB;
+  border-bottom-style:solid;
+  border-bottom-width:2px;
+  border-left-color:#666666;
+  border-left-style:solid;
+  border-left-width:2px;
+  border-right-color:#BBBBBB;
+  border-right-style:solid;
+  border-right-width:2px;
+  border-top-color:#666666;
+  border-top-style:solid;
+  border-top-width:2px;
+}
+.gwt-HorizontalSplitPanel {
+}
+.gwt-HorizontalSplitPanel .hsplitter {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:#E7E7E7;
+  background-image:initial;
+  background-origin:initial;
+  background-position:initial initial;
+  background-repeat:initial initial;
+  border-bottom-width:0;
+  border-color:initial;
+  border-image:initial;
+  border-left-width:0;
+  border-right-width:0;
+  border-style:initial;
+  border-top-width:0;
+  cursor:move;
+  line-height:0;
+}
+.gwt-VerticalSplitPanel {
+}
+.gwt-VerticalSplitPanel .vsplitter {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:#E7E7E7;
+  background-image:initial;
+  background-origin:initial;
+  background-position:initial initial;
+  background-repeat:initial initial;
+  border-bottom-width:0;
+  border-color:initial;
+  border-image:initial;
+  border-left-width:0;
+  border-right-width:0;
+  border-style:initial;
+  border-top-width:0;
+  cursor:move;
+  line-height:0;
+}
+.gwt-HTML {
+  padding-bottom:0;
+  padding-left:0;
+  padding-right:0;
+  padding-top:0;
+}
+.gwt-Hyperlink {
+}
+.gwt-Image {
+}
+.gwt-Label {
+}
+.gwt-ListBox {
+}
+.gwt-MenuBar {
+  cursor:default;
+}
+.gwt-MenuBar .gwt-MenuItem {
+  cursor:default;
+  font-family:'Arial Unicode MS', Arial, sans-serif;
+}
+.gwt-MenuBar .gwt-MenuItem-selected {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:#E3E8F3;
+  background-image:initial;
+  background-origin:initial;
+  background-position:initial initial;
+  background-repeat:initial initial;
+}
+.gwt-MenuBar-horizontal {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:#E3E8F3;
+  background-image:url(http://127.0.0.1:8888/cpvsports/gwt/clean/images/hborder.png);
+  background-origin:initial;
+  background-position:0 -2003px;
+  background-repeat:repeat no-repeat;
+  border-bottom-color:#E0E0E0;
+  border-bottom-style:solid;
+  border-bottom-width:1px;
+  border-image:initial;
+  border-left-color:#E0E0E0;
+  border-left-style:solid;
+  border-left-width:1px;
+  border-right-color:#E0E0E0;
+  border-right-style:solid;
+  border-right-width:1px;
+  border-top-color:#E0E0E0;
+  border-top-style:solid;
+  border-top-width:1px;
+}
+.gwt-MenuBar-horizontal .gwt-MenuItem {
+  color:#000000;
+  font-weight:bold;
+  padding-bottom:5px;
+  padding-left:10px;
+  padding-right:10px;
+  padding-top:5px;
+  vertical-align:bottom;
+}
+.gwt-MenuBar-horizontal .gwt-MenuItemSeparator {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:white;
+  background-image:initial;
+  background-origin:initial;
+  background-position:initial initial;
+  background-repeat:initial initial;
+  border-bottom-width:0;
+  border-color:initial;
+  border-image:initial;
+  border-left-color:#CCCCCC;
+  border-left-style:solid;
+  border-left-width:1px;
+  border-right-width:0;
+  border-style:initial;
+  border-top-width:0;
+  margin-bottom:0;
+  margin-left:0;
+  margin-right:0;
+  margin-top:0;
+  padding-bottom:0;
+  padding-left:0;
+  padding-right:0;
+  padding-top:0;
+  width:1px;
+}
+.gwt-MenuBar-horizontal .gwt-MenuItemSeparator .menuSeparatorInner {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:white;
+  background-image:initial;
+  background-origin:initial;
+  background-position:initial initial;
+  background-repeat:initial initial;
+  height:1px;
+  width:1px;
+}
+.gwt-MenuBar-vertical {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:white;
+  background-image:initial;
+  background-origin:initial;
+  background-position:initial initial;
+  background-repeat:initial initial;
+  margin-left:0;
+  margin-top:0;
+}
+.gwt-MenuBar-vertical table {
+  border-collapse:collapse;
+}
+.gwt-MenuBar-vertical .gwt-MenuItem {
+  padding-bottom:2px;
+  padding-left:1px;
+  padding-right:40px;
+  padding-top:2px;
+}
+.gwt-MenuBar-vertical .gwt-MenuItemSeparator {
+  padding-bottom:2px;
+  padding-left:0;
+  padding-right:0;
+  padding-top:2px;
+}
+.gwt-MenuBar-vertical .gwt-MenuItemSeparator .menuSeparatorInner {
+  border-bottom-width:0;
+  border-color:initial;
+  border-image:initial;
+  border-left-width:0;
+  border-right-width:0;
+  border-style:initial;
+  border-top-color:#CCCCCC;
+  border-top-style:solid;
+  border-top-width:1px;
+  height:1px;
+  overflow-x:hidden;
+  overflow-y:hidden;
+  padding-bottom:0;
+  padding-left:0;
+  padding-right:0;
+  padding-top:0;
+}
+.gwt-MenuBar-vertical .subMenuIcon {
+  padding-right:4px;
+}
+.gwt-MenuBar-vertical .subMenuIcon-selected {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:#E3E8F3;
+  background-image:initial;
+  background-origin:initial;
+  background-position:initial initial;
+  background-repeat:initial initial;
+}
+.gwt-MenuBarPopup {
+  margin-bottom:0;
+  margin-left:3px;
+  margin-right:0;
+  margin-top:0;
+}
+.gwt-MenuBarPopup .menuPopupTopCenter {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:initial;
+  background-image:url(http://127.0.0.1:8888/cpvsports/gwt/clean/images/hborder.png);
+  background-origin:initial;
+  background-position:0 -12px;
+  background-repeat:repeat no-repeat;
+}
+.gwt-MenuBarPopup .menuPopupBottomCenter {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:initial;
+  background-image:url(http://127.0.0.1:8888/cpvsports/gwt/clean/images/hborder.png);
+  background-origin:initial;
+  background-position:0 -13px;
+  background-repeat:repeat no-repeat;
+}
+.gwt-MenuBarPopup .menuPopupMiddleLeft {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:initial;
+  background-image:url(http://127.0.0.1:8888/cpvsports/gwt/clean/images/vborder.png);
+  background-origin:initial;
+  background-position:-12px 0;
+  background-repeat:no-repeat repeat;
+}
+.gwt-MenuBarPopup .menuPopupMiddleRight {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:initial;
+  background-image:url(http://127.0.0.1:8888/cpvsports/gwt/clean/images/vborder.png);
+  background-origin:initial;
+  background-position:-13px 0;
+  background-repeat:no-repeat repeat;
+}
+.gwt-MenuBarPopup .menuPopupTopLeftInner {
+  height:5px;
+  width:5px;
+  zoom:1;
+}
+.gwt-MenuBarPopup .menuPopupTopRightInner {
+  height:5px;
+  width:8px;
+  zoom:1;
+}
+.gwt-MenuBarPopup .menuPopupBottomLeftInner {
+  height:8px;
+  width:5px;
+  zoom:1;
+}
+.gwt-MenuBarPopup .menuPopupBottomRightInner {
+  height:8px;
+  width:8px;
+  zoom:1;
+}
+.gwt-MenuBarPopup .menuPopupTopLeft {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:initial;
+  background-image:url(http://127.0.0.1:8888/cpvsports/gwt/clean/images/corner.png);
+  background-origin:initial;
+  background-position:0 -36px;
+  background-repeat:no-repeat no-repeat;
+}
+.gwt-MenuBarPopup .menuPopupTopRight {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:initial;
+  background-image:url(http://127.0.0.1:8888/cpvsports/gwt/clean/images/corner.png);
+  background-origin:initial;
+  background-position:-5px -36px;
+  background-repeat:no-repeat no-repeat;
+}
+.gwt-MenuBarPopup .menuPopupBottomLeft {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:initial;
+  background-image:url(http://127.0.0.1:8888/cpvsports/gwt/clean/images/corner.png);
+  background-origin:initial;
+  background-position:0 -41px;
+  background-repeat:no-repeat no-repeat;
+}
+.gwt-MenuBarPopup .menuPopupBottomRight {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:initial;
+  background-image:url(http://127.0.0.1:8888/cpvsports/gwt/clean/images/corner.png);
+  background-origin:initial;
+  background-position:-5px -41px;
+  background-repeat:no-repeat no-repeat;
+}
+* html .gwt-MenuBarPopup .menuPopupTopLeftInner {
+  height:5px;
+  overflow-x:hidden;
+  overflow-y:hidden;
+  width:5px;
+}
+* html .gwt-MenuBarPopup .menuPopupTopRightInner {
+  height:5px;
+  overflow-x:hidden;
+  overflow-y:hidden;
+  width:8px;
+}
+* html .gwt-MenuBarPopup .menuPopupBottomLeftInner {
+  height:8px;
+  overflow-x:hidden;
+  overflow-y:hidden;
+  width:5px;
+}
+* html .gwt-MenuBarPopup .menuPopupBottomRightInner {
+  height:8px;
+  overflow-x:hidden;
+  overflow-y:hidden;
+  width:8px;
+}
+.gwt-PasswordTextBox {
+  border-bottom-color:#CCCCCC;
+  border-bottom-style:solid;
+  border-bottom-width:1px;
+  border-image:initial;
+  border-left-color:#CCCCCC;
+  border-left-style:solid;
+  border-left-width:1px;
+  border-right-color:#CCCCCC;
+  border-right-style:solid;
+  border-right-width:1px;
+  border-top-color:#999999;
+  border-top-style:solid;
+  border-top-width:1px;
+  font-size:100%;
+  padding-bottom:5px;
+  padding-left:4px;
+  padding-right:4px;
+  padding-top:5px;
+}
+.gwt-PasswordTextBox-readonly {
+  color:#888888;
+}
+.gwt-PopupPanel {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:white;
+  background-image:initial;
+  background-origin:initial;
+  background-position:initial initial;
+  background-repeat:initial initial;
+  border-bottom-color:#E7E7E7;
+  border-bottom-style:solid;
+  border-bottom-width:3px;
+  border-image:initial;
+  border-left-color:#E7E7E7;
+  border-left-style:solid;
+  border-left-width:3px;
+  border-right-color:#E7E7E7;
+  border-right-style:solid;
+  border-right-width:3px;
+  border-top-color:#E7E7E7;
+  border-top-style:solid;
+  border-top-width:3px;
+  padding-bottom:3px;
+  padding-left:3px;
+  padding-right:3px;
+  padding-top:3px;
+}
+.gwt-DecoratedPopupPanel .popupContent {
+}
+.gwt-DecoratedPopupPanel .popupMiddleCenter {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:#F1F1F1;
+  background-image:initial;
+  background-origin:initial;
+  background-position:initial initial;
+  background-repeat:initial initial;
+  padding-bottom:3px;
+  padding-left:3px;
+  padding-right:3px;
+  padding-top:3px;
+}
+.gwt-DecoratedPopupPanel .popupTopCenter {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:initial;
+  background-image:url(http://127.0.0.1:8888/cpvsports/gwt/clean/images/hborder.png);
+  background-origin:initial;
+  background-position:0 -2937px;
+  background-repeat:repeat no-repeat;
+}
+.gwt-DecoratedPopupPanel .popupBottomCenter {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:initial;
+  background-image:url(http://127.0.0.1:8888/cpvsports/gwt/clean/images/hborder.png);
+  background-origin:initial;
+  background-position:0 -2938px;
+  background-repeat:repeat no-repeat;
+}
+.gwt-DecoratedPopupPanel .popupMiddleLeft {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:initial;
+  background-image:url(http://127.0.0.1:8888/cpvsports/gwt/clean/images/vborder.png);
+  background-origin:initial;
+  background-position:-21px 0;
+  background-repeat:no-repeat repeat;
+}
+.gwt-DecoratedPopupPanel .popupMiddleRight {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:initial;
+  background-image:url(http://127.0.0.1:8888/cpvsports/gwt/clean/images/vborder.png);
+  background-origin:initial;
+  background-position:-24px 0;
+  background-repeat:no-repeat repeat;
+}
+.gwt-DecoratedPopupPanel .popupTopLeftInner {
+  height:5px;
+  width:6px;
+  zoom:1;
+}
+.gwt-DecoratedPopupPanel .popupTopRightInner {
+  height:5px;
+  width:6px;
+  zoom:1;
+}
+.gwt-DecoratedPopupPanel .popupBottomLeftInner {
+  height:6px;
+  width:6px;
+  zoom:1;
+}
+.gwt-DecoratedPopupPanel .popupBottomRightInner {
+  height:6px;
+  width:6px;
+  zoom:1;
+}
+.gwt-DecoratedPopupPanel .popupTopLeft {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:initial;
+  background-image:url(http://127.0.0.1:8888/cpvsports/gwt/clean/images/circles.png);
+  background-origin:initial;
+  background-position:0 -16px;
+  background-repeat:no-repeat no-repeat;
+}
+.gwt-DecoratedPopupPanel .popupTopRight {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:initial;
+  background-image:url(http://127.0.0.1:8888/cpvsports/gwt/clean/images/circles.png);
+  background-origin:initial;
+  background-position:-6px -16px;
+  background-repeat:no-repeat no-repeat;
+}
+.gwt-DecoratedPopupPanel .popupBottomLeft {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:initial;
+  background-image:url(http://127.0.0.1:8888/cpvsports/gwt/clean/images/circles.png);
+  background-origin:initial;
+  background-position:0 -21px;
+  background-repeat:no-repeat no-repeat;
+}
+.gwt-DecoratedPopupPanel .popupBottomRight {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:initial;
+  background-image:url(http://127.0.0.1:8888/cpvsports/gwt/clean/images/circles.png);
+  background-origin:initial;
+  background-position:-6px -21px;
+  background-repeat:no-repeat no-repeat;
+}
+* html .gwt-DecoratedPopupPanel .popupTopLeftInner {
+  height:5px;
+  overflow-x:hidden;
+  overflow-y:hidden;
+  width:6px;
+}
+* html .gwt-DecoratedPopupPanel .popupTopRightInner {
+  height:5px;
+  overflow-x:hidden;
+  overflow-y:hidden;
+  width:6px;
+}
+* html .gwt-DecoratedPopupPanel .popupBottomLeftInner {
+  height:6px;
+  overflow-x:hidden;
+  overflow-y:hidden;
+  width:6px;
+}
+* html .gwt-DecoratedPopupPanel .popupBottomRightInner {
+  height:6px;
+  overflow-x:hidden;
+  overflow-y:hidden;
+  width:6px;
+}
+.gwt-PopupPanelGlass {
+  background-color:#000000;
+  opacity:0.3;
+}
+.gwt-PushButton-up, .gwt-PushButton-up-hovering, .gwt-PushButton-up-disabled, .gwt-PushButton-down, .gwt-PushButton-down-hovering, .gwt-PushButton-down-disabled {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:initial;
+  background-image:url(http://127.0.0.1:8888/cpvsports/gwt/clean/images/hborder.png);
+  background-origin:initial;
+  background-position:0 -27px;
+  background-repeat:repeat no-repeat;
+  border-bottom-left-radius:2px;
+  border-bottom-right-radius:2px;
+  border-top-left-radius:2px;
+  border-top-right-radius:2px;
+  margin-bottom:0;
+  margin-left:0;
+  margin-right:0;
+  margin-top:0;
+  text-decoration:none;
+}
+.gwt-PushButton-up, .gwt-PushButton-up-hovering, .gwt-PushButton-up-disabled {
+  padding-bottom:3px;
+  padding-left:5px;
+  padding-right:5px;
+  padding-top:3px;
+}
+.gwt-PushButton-up {
+  border-bottom-color:#A0A0A0;
+  border-bottom-style:solid;
+  border-bottom-width:1px;
+  border-image:initial;
+  border-left-color:#BBBBBB;
+  border-left-style:solid;
+  border-left-width:1px;
+  border-right-color:#BBBBBB;
+  border-right-style:solid;
+  border-right-width:1px;
+  border-top-color:#BBBBBB;
+  border-top-style:solid;
+  border-top-width:1px;
+  cursor:pointer;
+}
+.gwt-PushButton-up-hovering {
+  border-bottom-color:#939393;
+  border-bottom-style:solid;
+  border-bottom-width:1px;
+  border-color:initial;
+  border-image:initial;
+  border-left-color:#939393;
+  border-left-style:solid;
+  border-left-width:1px;
+  border-right-color:#939393;
+  border-right-style:solid;
+  border-right-width:1px;
+  border-top-color:#939393;
+  border-top-style:solid;
+  border-top-width:1px;
+  cursor:pointer;
+}
+.gwt-PushButton-up-disabled {
+  border-bottom-color:#BBBBBB;
+  border-bottom-style:solid;
+  border-bottom-width:1px;
+  border-image:initial;
+  border-left-color:#BBBBBB;
+  border-left-style:solid;
+  border-left-width:1px;
+  border-right-color:#BBBBBB;
+  border-right-style:solid;
+  border-right-width:1px;
+  border-top-color:#BBBBBB;
+  border-top-style:solid;
+  border-top-width:1px;
+  cursor:default;
+  opacity:0.5;
+  zoom:1;
+}
+.gwt-PushButton-down, .gwt-PushButton-down-hovering, .gwt-PushButton-down-disabled {
+  outline-color:initial;
+  outline-style:none;
+  outline-width:initial;
+  padding-bottom:2px;
+  padding-left:6px;
+  padding-right:4px;
+  padding-top:4px;
+}
+.gwt-PushButton-down {
+  border-bottom-color:#666666;
+  border-bottom-style:inset;
+  border-bottom-width:1px;
+  border-image:initial;
+  border-left-color:#666666;
+  border-left-style:inset;
+  border-left-width:1px;
+  border-right-color:#666666;
+  border-right-style:inset;
+  border-right-width:1px;
+  border-top-color:#666666;
+  border-top-style:inset;
+  border-top-width:1px;
+  cursor:pointer;
+}
+.gwt-PushButton-down-hovering {
+  border-bottom-color:#939393;
+  border-bottom-style:solid;
+  border-bottom-width:1px;
+  border-image:initial;
+  border-left-color:#939393;
+  border-left-style:solid;
+  border-left-width:1px;
+  border-right-color:#939393;
+  border-right-style:solid;
+  border-right-width:1px;
+  border-top-color:#333333;
+  border-top-style:solid;
+  border-top-width:1px;
+  cursor:pointer;
+}
+.gwt-PushButton-down-disabled {
+  border-bottom-color:#CCCCCC;
+  border-bottom-style:outset;
+  border-bottom-width:1px;
+  border-image:initial;
+  border-left-color:#CCCCCC;
+  border-left-style:outset;
+  border-left-width:1px;
+  border-right-color:#CCCCCC;
+  border-right-style:outset;
+  border-right-width:1px;
+  border-top-color:#CCCCCC;
+  border-top-style:outset;
+  border-top-width:1px;
+  cursor:default;
+  opacity:0.5;
+  zoom:1;
+}
+.gwt-RadioButton {
+}
+.gwt-RadioButton-disabled {
+  color:#888888;
+}
+.gwt-RichTextArea {
+}
+.hasRichTextToolbar {
+  border-bottom-width:0;
+  border-color:initial;
+  border-image:initial;
+  border-left-width:0;
+  border-right-width:0;
+  border-style:initial;
+  border-top-width:0;
+}
+.gwt-RichTextToolbar {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:#E3E8F3;
+  background-image:url(http://127.0.0.1:8888/cpvsports/gwt/clean/images/hborder.png);
+  background-origin:initial;
+  background-position:0 -2003px;
+  background-repeat:repeat no-repeat;
+  border-bottom-color:#BBBBBB;
+  border-bottom-style:solid;
+  border-bottom-width:1px;
+  margin-bottom:0;
+  margin-left:0;
+  margin-right:0;
+  margin-top:0;
+  padding-bottom:3px;
+  padding-left:3px;
+  padding-right:3px;
+  padding-top:3px;
+}
+.gwt-RichTextToolbar .gwt-PushButton-up {
+  border-bottom-width:1px;
+  border-left-width:1px;
+  border-right-width:1px;
+  border-top-width:1px;
+  margin-bottom:4px;
+  margin-right:4px;
+  padding-bottom:0;
+  padding-left:0;
+  padding-right:1px;
+  padding-top:0;
+}
+.gwt-RichTextToolbar .gwt-PushButton-up-hovering {
+  border-bottom-width:1px;
+  border-left-width:1px;
+  border-right-width:1px;
+  border-top-width:1px;
+  margin-bottom:4px;
+  margin-right:4px;
+  padding-bottom:0;
+  padding-left:0;
+  padding-right:1px;
+  padding-top:0;
+}
+.gwt-RichTextToolbar .gwt-PushButton-down {
+  border-bottom-width:1px;
+  border-left-width:1px;
+  border-right-width:1px;
+  border-top-width:1px;
+  margin-bottom:4px;
+  margin-right:4px;
+  padding-bottom:0;
+  padding-left:1px;
+  padding-right:0;
+  padding-top:0;
+}
+.gwt-RichTextToolbar .gwt-PushButton-down-hovering {
+  border-bottom-width:1px;
+  border-left-width:1px;
+  border-right-width:1px;
+  border-top-width:1px;
+  margin-bottom:4px;
+  margin-right:4px;
+  padding-bottom:0;
+  padding-left:1px;
+  padding-right:0;
+  padding-top:0;
+}
+.gwt-RichTextToolbar .gwt-ToggleButton-up {
+  border-bottom-color:#A0A0A0;
+  border-bottom-style:solid;
+  border-bottom-width:1px;
+  border-image:initial;
+  border-left-color:#BBBBBB;
+  border-left-style:solid;
+  border-left-width:1px;
+  border-right-color:#BBBBBB;
+  border-right-style:solid;
+  border-right-width:1px;
+  border-top-color:#BBBBBB;
+  border-top-style:solid;
+  border-top-width:1px;
+  margin-bottom:4px;
+  margin-right:4px;
+  padding-bottom:0;
+  padding-left:0;
+  padding-right:1px;
+  padding-top:0;
+}
+.gwt-RichTextToolbar .gwt-ToggleButton-up-hovering {
+  border-bottom-width:1px;
+  border-left-width:1px;
+  border-right-width:1px;
+  border-top-width:1px;
+  margin-bottom:4px;
+  margin-right:4px;
+  padding-bottom:0;
+  padding-left:0;
+  padding-right:1px;
+  padding-top:0;
+}
+.gwt-RichTextToolbar .gwt-ToggleButton-down {
+  border-bottom-width:1px;
+  border-left-width:1px;
+  border-right-width:1px;
+  border-top-width:1px;
+  margin-bottom:4px;
+  margin-right:4px;
+  padding-bottom:0;
+  padding-left:1px;
+  padding-right:0;
+  padding-top:0;
+}
+.gwt-RichTextToolbar .gwt-ToggleButton-down-hovering {
+  border-bottom-width:1px;
+  border-left-width:1px;
+  border-right-width:1px;
+  border-top-width:1px;
+  margin-bottom:4px;
+  margin-right:4px;
+  padding-bottom:0;
+  padding-left:1px;
+  padding-right:0;
+  padding-top:0;
+}
+.gwt-StackPanel {
+  border-bottom-color:#BBBBBB;
+  border-bottom-style:solid;
+  border-bottom-width:1px;
+}
+.gwt-StackPanel .gwt-StackPanelItem {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:#D3DEF6;
+  background-image:url(http://127.0.0.1:8888/cpvsports/gwt/clean/images/hborder.png);
+  background-origin:initial;
+  background-position:0 -989px;
+  background-repeat:repeat no-repeat;
+  border-bottom-color:initial;
+  border-bottom-style:initial;
+  border-bottom-width:0;
+  border-image:initial;
+  border-left-color:#BBBBBB;
+  border-left-style:solid;
+  border-left-width:1px;
+  border-right-color:#BBBBBB;
+  border-right-style:solid;
+  border-right-width:1px;
+  border-top-color:#BBBBBB;
+  border-top-style:solid;
+  border-top-width:1px;
+  cursor:pointer;
+  font-size:1.3em;
+  font-weight:bold;
+  padding-bottom:3px;
+  padding-left:3px;
+  padding-right:3px;
+  padding-top:3px;
+}
+.gwt-StackPanel .gwt-StackPanelContent {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:white;
+  background-image:initial;
+  background-origin:initial;
+  background-position:initial initial;
+  background-repeat:initial initial;
+  border-bottom-color:initial;
+  border-bottom-style:initial;
+  border-bottom-width:0;
+  border-image:initial;
+  border-left-color:#BBBBBB;
+  border-left-style:solid;
+  border-left-width:1px;
+  border-right-color:#BBBBBB;
+  border-right-style:solid;
+  border-right-width:1px;
+  border-top-color:#BBBBBB;
+  border-top-style:solid;
+  border-top-width:1px;
+  padding-bottom:10px;
+  padding-left:5px;
+  padding-right:2px;
+  padding-top:2px;
+}
+.gwt-DecoratedStackPanel {
+  border-bottom-color:#BBBBBB;
+  border-bottom-style:solid;
+  border-bottom-width:1px;
+}
+.gwt-DecoratedStackPanel .gwt-StackPanelContent {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:white;
+  background-image:initial;
+  background-origin:initial;
+  background-position:initial initial;
+  background-repeat:initial initial;
+  border-bottom-color:initial;
+  border-bottom-style:initial;
+  border-bottom-width:0;
+  border-image:initial;
+  border-left-color:#BBBBBB;
+  border-left-style:solid;
+  border-left-width:1px;
+  border-right-color:#BBBBBB;
+  border-right-style:solid;
+  border-right-width:1px;
+  border-top-color:#BBBBBB;
+  border-top-style:solid;
+  border-top-width:1px;
+  padding-bottom:10px;
+  padding-left:5px;
+  padding-right:2px;
+  padding-top:2px;
+}
+.gwt-DecoratedStackPanel .gwt-StackPanelItem {
+  cursor:pointer;
+}
+.gwt-DecoratedStackPanel .stackItemTopLeft, .gwt-DecoratedStackPanel .stackItemTopRight {
+  height:6px;
+  width:6px;
+  zoom:1;
+}
+.gwt-DecoratedStackPanel .stackItemTopLeft {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:#D3DEF6;
+  background-image:url(http://127.0.0.1:8888/cpvsports/gwt/clean/images/corner.png);
+  background-origin:initial;
+  background-position:0 -49px;
+  background-repeat:no-repeat no-repeat;
+  border-left-color:#BBBBBB;
+  border-left-style:solid;
+  border-left-width:1px;
+}
+.gwt-DecoratedStackPanel .stackItemTopRight {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:#D3DEF6;
+  background-image:url(http://127.0.0.1:8888/cpvsports/gwt/clean/images/corner.png);
+  background-origin:initial;
+  background-position:-6px -49px;
+  background-repeat:no-repeat no-repeat;
+  border-right-color:#BBBBBB;
+  border-right-style:solid;
+  border-right-width:1px;
+}
+.gwt-DecoratedStackPanel .stackItemTopLeftInner, .gwt-DecoratedStackPanel .stackItemTopRightInner {
+  height:1px;
+  width:1px;
+}
+* html .gwt-DecoratedStackPanel .stackItemTopLeftInner, * html .gwt-DecoratedStackPanel .stackItemTopRightInner {
+  height:6px;
+  overflow-x:hidden;
+  overflow-y:hidden;
+  width:6px;
+}
+.gwt-DecoratedStackPanel .stackItemTopCenter {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:initial;
+  background-image:url(http://127.0.0.1:8888/cpvsports/gwt/clean/images/hborder.png);
+  background-origin:initial;
+  background-position:0 -21px;
+  background-repeat:repeat no-repeat;
+}
+.gwt-DecoratedStackPanel .stackItemMiddleLeft {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:#D3DEF6;
+  background-image:url(http://127.0.0.1:8888/cpvsports/gwt/clean/images/hborder.png);
+  background-origin:initial;
+  background-position:0 -989px;
+  background-repeat:repeat no-repeat;
+  border-left-color:#BBBBBB;
+  border-left-style:solid;
+  border-left-width:1px;
+}
+.gwt-DecoratedStackPanel .stackItemMiddleLeftInner, .gwt-DecoratedStackPanel .stackItemMiddleRightInner {
+  height:1px;
+  width:1px;
+}
+.gwt-DecoratedStackPanel .stackItemMiddleRight {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:#D3DEF6;
+  background-image:url(http://127.0.0.1:8888/cpvsports/gwt/clean/images/hborder.png);
+  background-origin:initial;
+  background-position:0 -989px;
+  background-repeat:repeat no-repeat;
+  border-right-color:#BBBBBB;
+  border-right-style:solid;
+  border-right-width:1px;
+}
+.gwt-DecoratedStackPanel .stackItemMiddleCenter {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:#D3DEF6;
+  background-image:url(http://127.0.0.1:8888/cpvsports/gwt/clean/images/hborder.png);
+  background-origin:initial;
+  background-position:0 -989px;
+  background-repeat:repeat no-repeat;
+  font-size:1.3em;
+  font-weight:bold;
+}
+.gwt-DecoratedStackPanel .gwt-StackPanelItem-first .stackItemTopRight, .gwt-DecoratedStackPanel .gwt-StackPanelItem-first .stackItemTopLeft {
+  background-color:white;
+  border-bottom-width:0;
+  border-color:initial;
+  border-image:initial;
+  border-left-width:0;
+  border-right-width:0;
+  border-style:initial;
+  border-top-width:0;
+}
+.gwt-DecoratedStackPanel .gwt-StackPanelItem-below-selected .stackItemTopLeft, .gwt-DecoratedStackPanel .gwt-StackPanelItem-below-selected .stackItemTopRight {
+  background-color:white;
+}
+.gwt-SuggestBox {
+  border-bottom-color:#CCCCCC;
+  border-bottom-style:solid;
+  border-bottom-width:1px;
+  border-image:initial;
+  border-left-color:#CCCCCC;
+  border-left-style:solid;
+  border-left-width:1px;
+  border-right-color:#CCCCCC;
+  border-right-style:solid;
+  border-right-width:1px;
+  border-top-color:#999999;
+  border-top-style:solid;
+  border-top-width:1px;
+  font-family:'Arial Unicode MS', Arial, sans-serif;
+  font-size:100%;
+  padding-bottom:5px;
+  padding-left:4px;
+  padding-right:4px;
+  padding-top:5px;
+}
+.gwt-SuggestBoxPopup {
+}
+.gwt-SuggestBoxPopup .item {
+  color:#000000;
+  cursor:default;
+  font-size:110%;
+  padding-bottom:2px;
+  padding-left:6px;
+  padding-right:6px;
+  padding-top:2px;
+}
+.gwt-SuggestBoxPopup .item-selected {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:#D5E2FF;
+  background-image:initial;
+  background-origin:initial;
+  background-position:initial initial;
+  background-repeat:initial initial;
+}
+.gwt-SuggestBoxPopup .suggestPopupContent {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:white;
+  background-image:initial;
+  background-origin:initial;
+  background-position:initial initial;
+  background-repeat:initial initial;
+}
+.gwt-SuggestBoxPopup .suggestPopupTopCenter {
+  border-top-color:#BBBBBB;
+  border-top-style:solid;
+  border-top-width:1px;
+}
+.gwt-SuggestBoxPopup .suggestPopupBottomCenter {
+  border-bottom-color:#BBBBBB;
+  border-bottom-style:solid;
+  border-bottom-width:1px;
+}
+.gwt-SuggestBoxPopup .suggestPopupTopCenterInner, .gwt-SuggestBoxPopup .suggestPopupBottomCenterInner {
+  height:1px;
+  line-height:1px;
+}
+.gwt-SuggestBoxPopup .suggestPopupMiddleLeft {
+  border-left-color:#BBBBBB;
+  border-left-style:solid;
+  border-left-width:1px;
+}
+.gwt-SuggestBoxPopup .suggestPopupMiddleRight {
+  border-right-color:#BBBBBB;
+  border-right-style:solid;
+  border-right-width:1px;
+}
+.gwt-SuggestBoxPopup .suggestPopupMiddleLeftInner, .gwt-SuggestBoxPopup .suggestPopupMiddleRightInner {
+  line-height:1px;
+  width:1px;
+}
+.gwt-SuggestBoxPopup .suggestPopupTopLeftInner {
+  height:0;
+  width:0;
+  zoom:1;
+}
+.gwt-SuggestBoxPopup .suggestPopupTopRightInner {
+  height:0;
+  width:0;
+  zoom:1;
+}
+.gwt-SuggestBoxPopup .suggestPopupBottomLeftInner {
+  height:0;
+  width:0;
+  zoom:1;
+}
+.gwt-SuggestBoxPopup .suggestPopupBottomRightInner {
+  height:0;
+  width:0;
+  zoom:1;
+}
+.gwt-SuggestBoxPopup .suggestPopupTopLeft {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:initial;
+  background-image:url(http://127.0.0.1:8888/cpvsports/gwt/clean/images/circles.png);
+  background-origin:initial;
+  background-position:0 -6px;
+  background-repeat:no-repeat no-repeat;
+  height:5px;
+  width:5px;
+}
+.gwt-SuggestBoxPopup .suggestPopupTopRight {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:initial;
+  background-image:url(http://127.0.0.1:8888/cpvsports/gwt/clean/images/circles.png);
+  background-origin:initial;
+  background-position:-5px -6px;
+  background-repeat:no-repeat no-repeat;
+  height:5px;
+  width:5px;
+}
+.gwt-SuggestBoxPopup .suggestPopupBottomLeft {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:initial;
+  background-image:url(http://127.0.0.1:8888/cpvsports/gwt/clean/images/circles.png);
+  background-origin:initial;
+  background-position:0 -11px;
+  background-repeat:no-repeat no-repeat;
+  height:5px;
+  width:5px;
+}
+.gwt-SuggestBoxPopup .suggestPopupBottomRight {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:initial;
+  background-image:url(http://127.0.0.1:8888/cpvsports/gwt/clean/images/circles.png);
+  background-origin:initial;
+  background-position:-5px -11px;
+  background-repeat:no-repeat no-repeat;
+  height:5px;
+  width:5px;
+}
+* html .gwt-SuggestBoxPopup .suggestPopupTopLeftInner {
+  height:0;
+  overflow-x:hidden;
+  overflow-y:hidden;
+  width:0;
+}
+* html .gwt-SuggestBoxPopup .suggestPopupTopRightInner {
+  height:0;
+  overflow-x:hidden;
+  overflow-y:hidden;
+  width:0;
+}
+* html .gwt-SuggestBoxPopup .suggestPopupBottomLeftInner {
+  height:0;
+  overflow-x:hidden;
+  overflow-y:hidden;
+  width:0;
+}
+* html .gwt-SuggestBoxPopup .suggestPopupBottomRightInner {
+  height:0;
+  overflow-x:hidden;
+  overflow-y:hidden;
+  width:0;
+}
+.gwt-TabBar {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:#CCCCCC;
+  background-image:initial;
+  background-origin:initial;
+  background-position:initial initial;
+  background-repeat:initial initial;
+  padding-top:6px;
+}
+.gwt-TabBar .gwt-TabBarFirst {
+  width:5px;
+}
+.gwt-TabBar .gwt-TabBarRest {
+}
+.gwt-TabBar .gwt-TabBarItem {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:#8E8E8E;
+  background-image:initial;
+  background-origin:initial;
+  background-position:initial initial;
+  background-repeat:initial initial;
+  border-bottom-left-radius:0;
+  border-bottom-right-radius:0;
+  border-top-left-radius:3px;
+  border-top-right-radius:3px;
+  color:white;
+  cursor:pointer;
+  font-weight:normal;
+  margin-left:4px;
+  padding-bottom:4px;
+  padding-left:8px;
+  padding-right:8px;
+  padding-top:4px;
+  text-align:center;
+}
+.gwt-TabBar .gwt-TabBarItem-selected {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:white;
+  background-image:initial;
+  background-origin:initial;
+  background-position:initial initial;
+  background-repeat:initial initial;
+  color:#333333;
+  cursor:default;
+  font-weight:bold;
+}
+.gwt-TabBar .gwt-TabBarItem-disabled {
+  color:#999999;
+  cursor:default;
+}
+.gwt-TabPanel {
+}
+.gwt-TabPanelBottom {
+  border-bottom-color:#CCCCCC;
+  border-bottom-style:solid;
+  border-bottom-width:1px;
+  border-left-color:#CCCCCC;
+  border-left-style:solid;
+  border-left-width:1px;
+  border-right-color:#CCCCCC;
+  border-right-style:solid;
+  border-right-width:1px;
+  border-top-color:#CCCCCC;
+  border-top-style:solid;
+  border-top-width:0;
+  overflow-x:hidden;
+  overflow-y:hidden;
+  padding-bottom:6px;
+  padding-left:6px;
+  padding-right:6px;
+  padding-top:6px;
+}
+.gwt-DecoratedTabBar {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:#CCCCCC;
+  background-image:initial;
+  background-origin:initial;
+  background-position:initial initial;
+  background-repeat:initial initial;
+  padding-top:6px;
+}
+.gwt-DecoratedTabBar .gwt-TabBarFirst {
+  width:5px;
+}
+.gwt-DecoratedTabBar .gwt-TabBarRest {
+}
+.gwt-DecoratedTabBar .gwt-TabBarItem {
+  border-collapse:collapse;
+  margin-left:4px;
+}
+.gwt-DecoratedTabBar .tabTopCenter {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:#8E8E8E;
+  background-image:initial;
+  background-origin:initial;
+  background-position:initial initial;
+  background-repeat:initial initial;
+  padding-bottom:0;
+  padding-left:0;
+  padding-right:0;
+  padding-top:0;
+}
+.gwt-DecoratedTabBar .tabTopLeft, .gwt-DecoratedTabBar .tabTopRight {
+  padding-bottom:0;
+  padding-left:0;
+  padding-right:0;
+  padding-top:0;
+  zoom:1;
+}
+.gwt-DecoratedTabBar .tabTopLeftInner, .gwt-DecoratedTabBar .tabTopRightInner {
+  height:3px;
+  width:3px;
+}
+.gwt-DecoratedTabBar .tabTopLeft {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:initial;
+  background-image:url(http://127.0.0.1:8888/cpvsports/gwt/clean/images/circles.png);
+  background-origin:initial;
+  background-position:0 0;
+  background-repeat:no-repeat no-repeat;
+}
+.gwt-DecoratedTabBar .tabTopRight {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:initial;
+  background-image:url(http://127.0.0.1:8888/cpvsports/gwt/clean/images/circles.png);
+  background-origin:initial;
+  background-position:-3px 0;
+  background-repeat:no-repeat no-repeat;
+}
+* html .gwt-DecoratedTabBar .tabTopLeftInner, * html .gwt-DecoratedTabBar .tabTopRightInner {
+  height:3px;
+  overflow-x:hidden;
+  overflow-y:hidden;
+  width:3px;
+}
+.gwt-DecoratedTabBar .tabMiddleLeft, .gwt-DecoratedTabBar .tabMiddleRight {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:#8E8E8E;
+  background-image:initial;
+  background-origin:initial;
+  background-position:initial initial;
+  background-repeat:initial initial;
+  padding-bottom:0;
+  padding-left:0;
+  padding-right:0;
+  padding-top:0;
+  width:3px;
+}
+.gwt-DecoratedTabBar .tabMiddleLeftInner, .gwt-DecoratedTabBar .tabMiddleRightInner {
+  height:1px;
+  width:1px;
+}
+.gwt-DecoratedTabBar .tabMiddleCenter {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:#8E8E8E;
+  background-image:initial;
+  background-origin:initial;
+  background-position:initial initial;
+  background-repeat:initial initial;
+  color:#FFFFFF;
+  cursor:pointer;
+  font-weight:normal;
+  padding-bottom:4px;
+  padding-left:5px;
+  padding-right:5px;
+  padding-top:0;
+  text-align:center;
+}
+.gwt-DecoratedTabBar .gwt-TabBarItem-selected .tabTopCenter {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:#FFFFFF;
+  background-image:initial;
+  background-origin:initial;
+  background-position:initial initial;
+  background-repeat:initial initial;
+}
+.gwt-DecoratedTabBar .gwt-TabBarItem-selected .tabTopLeft {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:initial;
+  background-image:url(http://127.0.0.1:8888/cpvsports/gwt/clean/images/circles.png);
+  background-origin:initial;
+  background-position:-6px 0;
+  background-repeat:no-repeat no-repeat;
+}
+.gwt-DecoratedTabBar .gwt-TabBarItem-selected .tabTopRight {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:initial;
+  background-image:url(http://127.0.0.1:8888/cpvsports/gwt/clean/images/circles.png);
+  background-origin:initial;
+  background-position:-9px 0;
+  background-repeat:no-repeat no-repeat;
+}
+.gwt-DecoratedTabBar .gwt-TabBarItem-selected .tabMiddleLeft, .gwt-DecoratedTabBar .gwt-TabBarItem-selected .tabMiddleRight {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:#FFFFFF;
+  background-image:initial;
+  background-origin:initial;
+  background-position:initial initial;
+  background-repeat:initial initial;
+}
+.gwt-DecoratedTabBar .gwt-TabBarItem-selected .tabMiddleCenter {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:#FFFFFF;
+  background-image:initial;
+  background-origin:initial;
+  background-position:initial initial;
+  background-repeat:initial initial;
+  color:#333333;
+  cursor:default;
+  font-weight:bold;
+}
+.gwt-DecoratedTabBar .gwt-TabBarItem-disabled .tabMiddleCenter {
+  color:#999999;
+  cursor:default;
+}
+.gwt-TextArea {
+  border-bottom-color:#CCCCCC;
+  border-bottom-style:solid;
+  border-bottom-width:1px;
+  border-image:initial;
+  border-left-color:#CCCCCC;
+  border-left-style:solid;
+  border-left-width:1px;
+  border-right-color:#CCCCCC;
+  border-right-style:solid;
+  border-right-width:1px;
+  border-top-color:#666666;
+  border-top-style:solid;
+  border-top-width:1px;
+  font-family:'Arial Unicode MS', Arial, sans-serif;
+  font-size:100%;
+  padding-bottom:4px;
+  padding-left:4px;
+  padding-right:4px;
+  padding-top:4px;
+}
+.gwt-TextArea-readonly {
+  color:#888888;
+}
+.gwt-TextBox {
+  border-bottom-color:#CCCCCC;
+  border-bottom-style:solid;
+  border-bottom-width:1px;
+  border-image:initial;
+  border-left-color:#CCCCCC;
+  border-left-style:solid;
+  border-left-width:1px;
+  border-right-color:#CCCCCC;
+  border-right-style:solid;
+  border-right-width:1px;
+  border-top-color:#999999;
+  border-top-style:solid;
+  border-top-width:1px;
+  font-family:'Arial Unicode MS', Arial, sans-serif;
+  font-size:small;
+  padding-bottom:5px;
+  padding-left:4px;
+  padding-right:4px;
+  padding-top:5px;
+}
+.gwt-TextBox-readonly {
+  color:#888888;
+}
+.gwt-ToggleButton-up, .gwt-ToggleButton-up-hovering, .gwt-ToggleButton-up-disabled, .gwt-ToggleButton-down, .gwt-ToggleButton-down-hovering, .gwt-ToggleButton-down-disabled {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:initial;
+  background-image:url(http://127.0.0.1:8888/cpvsports/gwt/clean/images/hborder.png);
+  background-origin:initial;
+  background-position:0 -27px;
+  background-repeat:repeat no-repeat;
+  border-bottom-left-radius:2px;
+  border-bottom-right-radius:2px;
+  border-top-left-radius:2px;
+  border-top-right-radius:2px;
+  margin-bottom:0;
+  margin-left:0;
+  margin-right:0;
+  margin-top:0;
+  text-decoration:none;
+}
+.gwt-ToggleButton-up, .gwt-ToggleButton-up-hovering, .gwt-ToggleButton-up-disabled {
+  padding-bottom:3px;
+  padding-left:5px;
+  padding-right:5px;
+  padding-top:3px;
+}
+.gwt-ToggleButton-up {
+  border-bottom-color:#A0A0A0;
+  border-bottom-style:solid;
+  border-bottom-width:1px;
+  border-image:initial;
+  border-left-color:#BBBBBB;
+  border-left-style:solid;
+  border-left-width:1px;
+  border-right-color:#BBBBBB;
+  border-right-style:solid;
+  border-right-width:1px;
+  border-top-color:#BBBBBB;
+  border-top-style:solid;
+  border-top-width:1px;
+  cursor:pointer;
+}
+.gwt-ToggleButton-up-hovering {
+  border-bottom-color:#939393;
+  border-bottom-style:solid;
+  border-bottom-width:1px;
+  border-color:initial;
+  border-image:initial;
+  border-left-color:#939393;
+  border-left-style:solid;
+  border-left-width:1px;
+  border-right-color:#939393;
+  border-right-style:solid;
+  border-right-width:1px;
+  border-top-color:#939393;
+  border-top-style:solid;
+  border-top-width:1px;
+  cursor:pointer;
+}
+.gwt-ToggleButton-up-disabled {
+  border-bottom-color:#BBBBBB;
+  border-bottom-style:solid;
+  border-bottom-width:1px;
+  border-image:initial;
+  border-left-color:#BBBBBB;
+  border-left-style:solid;
+  border-left-width:1px;
+  border-right-color:#BBBBBB;
+  border-right-style:solid;
+  border-right-width:1px;
+  border-top-color:#BBBBBB;
+  border-top-style:solid;
+  border-top-width:1px;
+  cursor:default;
+  opacity:0.5;
+  zoom:1;
+}
+.gwt-ToggleButton-down, .gwt-ToggleButton-down-hovering, .gwt-ToggleButton-down-disabled {
+  padding-bottom:2px;
+  padding-left:6px;
+  padding-right:4px;
+  padding-top:4px;
+}
+.gwt-ToggleButton-down {
+  background-position:0 -513px;
+  border-bottom-color:#666666;
+  border-bottom-style:inset;
+  border-bottom-width:1px;
+  border-image:initial;
+  border-left-color:#666666;
+  border-left-style:inset;
+  border-left-width:1px;
+  border-right-color:#666666;
+  border-right-style:inset;
+  border-right-width:1px;
+  border-top-color:#666666;
+  border-top-style:inset;
+  border-top-width:1px;
+  cursor:pointer;
+}
+.gwt-ToggleButton-down-hovering {
+  background-position:0 -513px;
+  border-bottom-color:#6699EE;
+  border-bottom-style:inset;
+  border-bottom-width:1px;
+  border-color:initial;
+  border-image:initial;
+  border-left-color:#77AAFF;
+  border-left-style:inset;
+  border-left-width:1px;
+  border-right-color:#6699EE;
+  border-right-style:inset;
+  border-right-width:1px;
+  border-top-color:#99CCFF;
+  border-top-style:inset;
+  border-top-width:1px;
+  cursor:pointer;
+}
+.gwt-ToggleButton-down-disabled {
+  background-position:0 -513px;
+  border-bottom-color:#CCCCCC;
+  border-bottom-style:inset;
+  border-bottom-width:1px;
+  border-image:initial;
+  border-left-color:#CCCCCC;
+  border-left-style:inset;
+  border-left-width:1px;
+  border-right-color:#CCCCCC;
+  border-right-style:inset;
+  border-right-width:1px;
+  border-top-color:#CCCCCC;
+  border-top-style:inset;
+  border-top-width:1px;
+  cursor:default;
+  opacity:0.5;
+  zoom:1;
+}
+.gwt-Tree .gwt-TreeItem {
+  cursor:pointer;
+  margin-bottom:0;
+  margin-left:0;
+  margin-right:0;
+  margin-top:0;
+  padding-bottom:1px;
+  padding-left:0;
+  padding-right:0;
+  padding-top:1px;
+  white-space:nowrap;
+}
+.gwt-Tree .gwt-TreeItem-selected {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:#EBEFF9;
+  background-image:initial;
+  background-origin:initial;
+  background-position:initial initial;
+  background-repeat:initial initial;
+}
+.gwt-TreeItem .gwt-RadioButton input, .gwt-TreeItem .gwt-CheckBox input {
+  margin-left:0;
+}
+* html .gwt-TreeItem .gwt-RadioButton input, * html .gwt-TreeItem .gwt-CheckBox input {
+  margin-left:-4px;
+}
+.gwt-DateBox {
+  border-bottom-color:#CCCCCC;
+  border-bottom-style:solid;
+  border-bottom-width:1px;
+  border-image:initial;
+  border-left-color:#CCCCCC;
+  border-left-style:solid;
+  border-left-width:1px;
+  border-right-color:#CCCCCC;
+  border-right-style:solid;
+  border-right-width:1px;
+  border-top-color:#999999;
+  border-top-style:solid;
+  border-top-width:1px;
+  font-size:100%;
+  padding-bottom:5px;
+  padding-left:4px;
+  padding-right:4px;
+  padding-top:5px;
+}
+.gwt-DateBox input {
+  width:8em;
+}
+.dateBoxFormatError {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:#FFCCCC;
+  background-image:initial;
+  background-origin:initial;
+  background-position:initial initial;
+  background-repeat:initial initial;
+}
+.dateBoxPopup {
+}
+.gwt-DatePicker {
+  border-bottom-color:#CCCCCC;
+  border-bottom-style:solid;
+  border-bottom-width:1px;
+  border-image:initial;
+  border-left-color:#CCCCCC;
+  border-left-style:solid;
+  border-left-width:1px;
+  border-right-color:#CCCCCC;
+  border-right-style:solid;
+  border-right-width:1px;
+  border-top-color:#999999;
+  border-top-style:solid;
+  border-top-width:1px;
+  cursor:default;
+}
+.gwt-DatePicker td, .datePickerMonthSelector td:focus {
+  outline-color:initial;
+  outline-style:none;
+  outline-width:initial;
+}
+.datePickerDays {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:white;
+  background-image:initial;
+  background-origin:initial;
+  background-position:initial initial;
+  background-repeat:initial initial;
+  width:100%;
+}
+.datePickerDay, .datePickerWeekdayLabel, .datePickerWeekendLabel {
+  border-bottom-color:#EDEDED;
+  border-bottom-style:solid;
+  border-bottom-width:1px;
+  border-right-color:#EDEDED;
+  border-right-style:solid;
+  border-right-width:1px;
+  color:#333333;
+  font-size:85%;
+  font-weight:bold;
+  outline-color:initial;
+  outline-style:none;
+  outline-width:initial;
+  padding-bottom:4px;
+  padding-left:4px;
+  padding-right:4px;
+  padding-top:4px;
+  text-align:center;
+}
+.datePickerWeekdayLabel, .datePickerWeekendLabel {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:#FFFFFF;
+  background-image:initial;
+  background-origin:initial;
+  background-position:initial initial;
+  background-repeat:initial initial;
+  color:#666666;
+  cursor:default;
+  font-size:70%;
+  font-weight:normal;
+  padding-bottom:2px;
+  padding-left:4px;
+  padding-right:4px;
+  padding-top:0;
+}
+.datePickerDay {
+  cursor:pointer;
+  padding-bottom:4px;
+  padding-left:7px;
+  padding-right:7px;
+  padding-top:4px;
+}
+.datePickerDayIsWeekend {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:#F7F7F7;
+  background-image:initial;
+  background-origin:initial;
+  background-position:initial initial;
+  background-repeat:initial initial;
+}
+.datePickerDayIsFiller {
+  color:#999999;
+  font-weight:normal;
+}
+.datePickerDayIsValue {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:#D7DFE8;
+  background-image:initial;
+  background-origin:initial;
+  background-position:initial initial;
+  background-repeat:initial initial;
+}
+.datePickerDayIsDisabled {
+  color:#AAAAAA;
+  font-style:italic;
+}
+.datePickerDayIsHighlighted {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:#F0E68C;
+  background-image:initial;
+  background-origin:initial;
+  background-position:initial initial;
+  background-repeat:initial initial;
+}
+.datePickerDayIsValueAndHighlighted {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:#D7DFE8;
+  background-image:initial;
+  background-origin:initial;
+  background-position:initial initial;
+  background-repeat:initial initial;
+}
+.datePickerDayIsToday {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:initial;
+  background-image:url(http://127.0.0.1:8888/cpvsports/gwt/clean/images/hborder.png);
+  background-origin:initial;
+  background-position:0 -2607px;
+  background-repeat:repeat no-repeat;
+  color:#FFFFFF;
+  padding-bottom:3px;
+  padding-left:3px;
+  padding-right:3px;
+  padding-top:3px;
+}
+.datePickerMonthSelector {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:#FFFFFF;
+  background-image:initial;
+  background-origin:initial;
+  background-position:initial initial;
+  background-repeat:initial initial;
+  padding-bottom:5px;
+  padding-left:0;
+  padding-right:0;
+  padding-top:1px;
+  width:100%;
+}
+td.datePickerMonth {
+  color:#333333;
+  font-size:100%;
+  font-weight:bold;
+  text-align:center;
+  vertical-align:middle;
+  white-space:nowrap;
+}
+.datePickerPreviousButton, .datePickerNextButton {
+  color:#3A6AAD;
+  cursor:pointer;
+  font-size:120%;
+  font-weight:bold;
+  line-height:1em;
+  outline-color:initial;
+  outline-style:none;
+  outline-width:initial;
+  padding-bottom:0;
+  padding-left:4px;
+  padding-right:4px;
+  padding-top:0;
+}
+.gwt-StackLayoutPanel {
+  border-bottom-color:#BBBBBB;
+  border-bottom-style:solid;
+  border-bottom-width:1px;
+}
+.gwt-StackLayoutPanel .gwt-StackLayoutPanelHeader {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:#D3DEF6;
+  background-image:url(http://127.0.0.1:8888/cpvsports/gwt/clean/images/hborder.png);
+  background-origin:initial;
+  background-position:0 -989px;
+  background-repeat:repeat no-repeat;
+  border-bottom-color:initial;
+  border-bottom-style:initial;
+  border-bottom-width:0;
+  border-image:initial;
+  border-left-color:#BBBBBB;
+  border-left-style:solid;
+  border-left-width:1px;
+  border-right-color:#BBBBBB;
+  border-right-style:solid;
+  border-right-width:1px;
+  border-top-color:#BBBBBB;
+  border-top-style:solid;
+  border-top-width:1px;
+  cursor:pointer;
+  font-size:1.3em;
+  font-weight:bold;
+  padding-bottom:3px;
+  padding-left:3px;
+  padding-right:3px;
+  padding-top:3px;
+}
+.gwt-StackLayoutPanel .gwt-StackLayoutPanelHeader-hovering {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:#D3DEF6;
+  background-image:initial;
+  background-origin:initial;
+  background-position:initial initial;
+  background-repeat:initial initial;
+}
+.gwt-StackLayoutPanel .gwt-StackLayoutPanelContent {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:white;
+  background-image:initial;
+  background-origin:initial;
+  background-position:initial initial;
+  background-repeat:initial initial;
+  border-bottom-color:initial;
+  border-bottom-style:initial;
+  border-bottom-width:0;
+  border-image:initial;
+  border-left-color:#BBBBBB;
+  border-left-style:solid;
+  border-left-width:1px;
+  border-right-color:#BBBBBB;
+  border-right-style:solid;
+  border-right-width:1px;
+  border-top-color:#BBBBBB;
+  border-top-style:solid;
+  border-top-width:1px;
+  padding-bottom:10px;
+  padding-left:5px;
+  padding-right:2px;
+  padding-top:2px;
+}
+.gwt-TabLayoutPanel {
+}
+.gwt-TabLayoutPanel .gwt-TabLayoutPanelTabs {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:#CCCCCC;
+  background-image:initial;
+  background-origin:initial;
+  background-position:initial initial;
+  background-repeat:initial initial;
+  padding-left:5px;
+  padding-top:6px;
+}
+.gwt-TabLayoutPanel .gwt-TabLayoutPanelContentContainer {
+  border-bottom-color:#CCCCCC;
+  border-bottom-style:solid;
+  border-bottom-width:1px;
+  border-left-color:#CCCCCC;
+  border-left-style:solid;
+  border-left-width:1px;
+  border-right-color:#CCCCCC;
+  border-right-style:solid;
+  border-right-width:1px;
+  border-top-color:#CCCCCC;
+  border-top-style:solid;
+  border-top-width:0;
+}
+.gwt-TabLayoutPanel .gwt-TabLayoutPanelContent {
+  overflow-x:hidden;
+  overflow-y:hidden;
+  padding-bottom:6px;
+  padding-left:6px;
+  padding-right:6px;
+  padding-top:6px;
+}
+.gwt-TabLayoutPanel .gwt-TabLayoutPanelTab {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:#8E8E8E;
+  background-image:initial;
+  background-origin:initial;
+  background-position:initial initial;
+  background-repeat:initial initial;
+  border-bottom-left-radius:0;
+  border-bottom-right-radius:0;
+  border-top-left-radius:3px;
+  border-top-right-radius:3px;
+  color:white;
+  cursor:pointer;
+  font-weight:normal;
+  margin-left:4px;
+  padding-bottom:4px;
+  padding-left:8px;
+  padding-right:8px;
+  padding-top:4px;
+  text-align:center;
+}
+.gwt-TabLayoutPanel .gwt-TabLayoutPanelTab-selected {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:white;
+  background-image:initial;
+  background-origin:initial;
+  background-position:initial initial;
+  background-repeat:initial initial;
+  color:#333333;
+  cursor:default;
+  font-weight:bold;
+}
+.gwt-SplitLayoutPanel-HDragger {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:#E7E7E7;
+  background-image:url(http://127.0.0.1:8888/cpvsports/gwt/clean/images/thumb_vertical.png);
+  background-origin:initial;
+  background-position:50% 50%;
+  background-repeat:no-repeat no-repeat;
+  cursor:col-resize;
+}
+.gwt-SplitLayoutPanel-VDragger {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:#E7E7E7;
+  background-image:url(http://127.0.0.1:8888/cpvsports/gwt/clean/images/thumb_horz.png);
+  background-origin:initial;
+  background-position:50% 50%;
+  background-repeat:no-repeat no-repeat;
+  cursor:row-resize;
+}
+
+
+
+
+
+
+/************************ FIN ESTILO ESTANDAR ************************/
+/************************ ESTILO PROPIO DE LA APLICACION *************/
+
+html, body {
+    background: url("../img/background.png") no-repeat center;
+    background-color: #191919;
+    color: #717173;
+    font-family: 'Open Sans',sans-serif;
+    font-size: 12px;
+    line-height: 1.2em;
+    min-width: 1040px;    
+    margin:0;
+    padding:0;
+}
+
+.pagina {
+   margin-top:30px; 
+   padding-bottom: 30px;
+}
+
+/********************** HEADER **********************/
+
+ #headerContainer {
+    background: none repeat scroll 0 0 #141414;
+    position: relative;
+    z-index: 50;     
+ }
+ 
+ #header {
+    background: url("../img/bg_header.gif") no-repeat scroll 0 0 transparent;
+    height: 80px;
+    padding: 20px 0 0;
+    position: relative;     
+ }
+ 
+ #header a.logoLink {
+    background: url("../img/logo.png") no-repeat scroll 0 0 transparent;
+    display: block;
+    height: 60px;
+    width: 225px;     
+ }
+ 
+ #headerMenu {
+    position:relative;
+    margin-top: -12px;
+    margin-left:57px;
+ }
+ 
+ #headerMenu a{
+     background: url("../img/listBullet.png") no-repeat scroll 00 transparent;
+     padding:8px;
+    color: #FFFFFF;
+    font-family: 'Open Sans',sans-serif;
+    font-size: 11px;
+    font-weight: 600;     
+ }
+ 
+ #headerNav {
+     background: url("../img/tail-row-nav.gif") repeat-x scroll 0 0 #141414
+ }
+ 
+ #headerNav table {
+ 	margin-bottom:0;
+ }
+ 
+ #nav ul {
+     margin:0;
+     padding:0;
+ }
+ 
+ #nav ul li {
+    border-right: 1px solid #000000;
+    float: left;
+    line-height: 16px;
+ }
+ 
+  #nav a {
+    color: #FFFFFF;
+    display: block;
+    font-family: 'Open Sans',sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 10px 19px 12px;
+    border-right: 1px solid #000000;
+    text-decoration: none;
+ }
+ #nav a.active {
+       background: url("../img/liActive.gif") repeat-x scroll 0 0 #6C1817;
+ }
+ 
+ #nav a:hover {
+     background: url("../img/liActive.gif") repeat-x scroll 0 0 #6C1817;
+ }
+ 
+ /************************* FIN HEADER ********************/
+ 
+ /********************* CONTENIDO ************************/
+ 
+ #contenido {
+    background: url("../img/bg_contenido.gif") repeat-x scroll 0 0 #FFFFFF;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    overflow:hidden;
+ }
+ 
+ #contenido #main, #sidebar {
+ }
+ 
+ /************************** PORTADA **********************/
+ #titularPortada {
+    background: url("../img/bg_portada.gif") repeat-x scroll 0 0 #141414;
+    margin-bottom: 5px;
+ }
+ 
+ #titularPortada {
+    display: block;
+    padding: 15px 20px 1px 12px;     
+    text-decoration: none;
+    color: #FFFFFF;
+    font-size: 12px;
+    line-height: 15px;
+ }
+ 
+ #titularPortada h2 {
+     line-height: 25px;
+     margin-bottom: 5px;
+ }
+ 
+ div.fecha {
+    background: url("../img/fecha.gif") repeat-x scroll 0 0 #141414;
+    color: #FFFFFF;
+    display: inline-block;
+    font-family: 'Open Sans',sans-serif;
+    font-size: 10px;
+    margin-bottom: 10px;
+    padding: 3px 5px;
+    float:right;
+    text-transform: uppercase;    
+ }
+ 
+ /*********************** NOTICIAS **********************/
+ #noticias {
+     margin-top:20px;
+ }
+ 
+ #noticias-nav {
+     background: url("../img/bg_noticias.gif") repeat-x scroll 0 0 transparent;
+     padding-left: 12px;
+     list-style-type: none;
+     height: 55px;
+     margin-bottom: 0;
+ }
+ 
+ #noticias-nav a {
+    border-right: 1px solid #000000;
+    display: inline-block;
+    line-height: 20px;
+    margin-right: 12px;
+    margin-left:6px;
+    padding: 7px 12px 7px 0;
+ }
+ 
+ #noticias-nav a.active {
+     color: #FFF;
+ }
+ 
+ #noticias-nav a:hover {
+     color: #FFF;
+ }
+ 
+ #noticias-nav a {
+    color: #4E4E4E;
+    text-decoration: none;
+    font-family: 'Open Sans',sans-serif;
+    font-size: 16px;
+    font-weight: 600;     
+ }
+ 
+ /****************** LISTA NOTICIAS **********************/
+ 
+ .listaNoticias {
+     padding-top: 21px;
+ }
+ 
+ .noticia {
+    background: url("../img/bg_noticia.gif") repeat-x scroll 0 bottom transparent;
+    margin-bottom: 20px;
+    overflow: hidden;
+    padding: 0 0 18px 20px;     
+ }
+ .noticia1 {
+    background: url("../img/bg_noticia.gif") repeat-x scroll 0 bottom transparent;
+    line-height: 20px;
+    margin-bottom: 20px;
+    overflow: hidden;  
+ }
+  div.fecha1 {
+    background: url("../img/fecha.gif") repeat-x scroll 0 0 #141414;
+    color: #FFFFFF;
+    display: inline-block;
+    font-family: 'Open Sans',sans-serif;
+    font-size: 10px;
+    margin-bottom: 10px;
+    padding: 3px 5px;
+    text-transform: uppercase;    
+ }
+
+ 
+ .noticia img {
+     float:left;    
+ }
+ 
+ .contenidoNoticia p {
+     max-height: 60px;
+     overflow: hidden;
+     margin-bottom: 5px;
+ }
+ 
+ .contenidoNoticia h2{
+     line-height: 25px;
+     margin-bottom: 5px;
+     color: #292929;
+ }
+ 
+ 
+  
+ /******************** SIDEBAR ***************************/
+ #eventos {
+     margin-top:20px;
+ }
+ 
+ .sidebarTitle {
+    background: url("../img/sidebarTitle.gif") repeat-x scroll 0 0 #141414;
+    display: block;
+    padding: 11px 0 2px 11px;
+    position: relative;
+    z-index: 5;     
+ } 
+
+ #contenidoEventos span {
+    display: block;
+    font-size: 10px;
+    line-height: 15px;
+    margin-bottom: 7px;     
+ } 
+ 
+ #contenidoEventos h4 {
+   color: #FFFFFF;
+    display: inline-block;
+    font-family: 'Open Sans',sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 21px;
+    margin-top: 5px;
+    margin-bottom: 5px;     
+ }
+ 
+ #contenidoEventos p {
+    color: #717173;
+    font-family: 'Open Sans',sans-serif;
+    font-size: 12px;
+    line-height: 17px;   
+ }
+ 
+ .comentarios {
+    background: url("../img/comentario.png") no-repeat scroll 2px 4px transparent;
+    display: inline-block;
+    padding-left: 32px;
+    padding-right: 12px;   
+    height: 20px;  
+ }
+
+ .readMore {
+    background: url("../img/readMore.png") no-repeat scroll right 7px transparent;
+    color: #FFFFFF;
+    text-decoration: none;
+    display: inline-block;
+    font-family: 'Open Sans',sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 15px;
+    margin-bottom: 5px;
+    margin-top: 1px;
+    padding-right: 10px;     
+ }
+ 
+ .readMore:hover {
+     color: #F6070B;
+ }
+ 
+#contenidoEventos {
+    background: url("../img/bg_eventos.gif") repeat-x scroll 0 0 #141414;
+    margin-bottom: 20px;
+    padding: 11px 10px 12px;
+}
+ 
+#contenidoMiscelanea {
+    background: url("../images/bg_miscelanea.gif") repeat-x scroll 0 0 #141414;
+    padding: 16px 10px 4px 19px;    
+}
+
+#contenidoMiscelanea ul {
+    list-style-type: none;
+}
+
+#contenidoMiscelanea ul li:first-child {
+    background: none repeat scroll 0 0 transparent;
+    margin: 0;
+    padding: 0;    
+}
+
+#contenidoMiscelanea p {
+    background: url("../img/listaMiscelanea.png") repeat-x scroll 0 0 transparent;
+    margin-top: 5px;
+    padding-top: 24px;    
+    margin:0;
+}
+
+#contenidoMiscelanea a {
+    color: #FFFFFF;
+    display: block;
+    font-size: 14px;
+    line-height: 18px;
+    margin-bottom: 3px;
+    text-decoration:none;
+}
+
+#contenidoMiscelanea a:hover {
+    color: #F6070B;
+}
+
+#contenidoMiscelanea p {
+    color: #717173;
+    font-family: 'Open Sans',sans-serif;
+    font-size: 12px;
+    line-height: 17px;
+    padding-bottom: 12px;    
+}
+
+#contenidoMiscelanea .readMore {
+    background: url("../img/readMore2.png") no-repeat scroll 0 6px transparent;
+    display: inline-block;
+    height: 12px;
+    margin-left: 4px;
+    width: 12px;   
+	float: right;
+	position: relative;
+	top: -20px;
+	right: 10px;     
+}
+
+#contenidoMiscelanea .readMore:hover {
+    background: url("../img/readMore2.png") no-repeat scroll 0 -8px transparent;
+}
+ /******************** FIN SIDEBAR ***************************/
+ 
+
+ /********************* FIN CONTENIDO ************************/
+ 
+ /************************** FOOTER ********************/ 
+  
+ #footerContainer {
+    background: url("../img/bg_footer.gif") repeat-x scroll 0 0 #333333;
+    padding: 16px 0 12px;
+    position: relative;
+ }
+ 
+ #footerContainer .contenidoArticulo {
+     list-style-type: none;
+     margin:0;
+     padding-top: 14px;
+ }
+ 
+ #footerContainer ul li {
+     margin:0;
+ }
+ 
+ #footerContainer table {
+ 	margin-bottom:0;
+ }
+ 
+ #footerContainer a {
+    color: #717173;
+    font-size: 12px;
+    line-height: 20px;
+    text-decoration:none;
+ }
+
+ #footerContainer a:hover {
+    color: #AC1718;
+ }
+ 
+ #footerContainer h3 {
+    color: #FFFFFF;
+    font-family: 'Open Sans',sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 18px;  
+    margin-bottom:10px;
+ }
+ 
+  .footerArticulo {
+    border-right: 1px solid #000000;     
+    padding-left: 10px;
+    padding-right:10px;
+ }
+ 
+ #footerLogo {
+     padding-left: 140px;
+     margin-left:380px;
+ }
+ 
+ #footerLogo h1 {
+     margin-bottom: 0;
+ }
+ 
+#footer a.logoLink {
+    background: url("../img/logoFooter.png") no-repeat scroll 0 0 transparent;
+    display: block;
+    height: 60px;
+    width: 225px;     
+ }
+ 
+ #copyright {
+    color: #717173;
+    display: block;
+    font-size: 12px;
+    line-height: 15px;
+    padding: 7px 0 0;
+    text-decoration: none;
+    text-align:right;
+ }
+ /*********************** FIN FOOTER *****************/
+ 
+ 
+ 
+ 
+ 
+ 
