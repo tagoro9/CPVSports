@@ -5,22 +5,55 @@ import com.google.gwt.user.client.ui.HorizontalPanel;
 import com.google.gwt.user.client.ui.HTML;
 import com.google.gwt.user.client.ui.RootPanel;
 import com.google.gwt.user.client.ui.Anchor;
+import com.google.gwt.event.dom.client.ClickEvent;
+import com.google.gwt.event.dom.client.ClickHandler;
+import com.google.gwt.user.client.ui.FormPanel;
+import com.google.gwt.user.client.ui.TextBox;
+import com.google.gwt.user.client.ui.PasswordTextBox;
 
 public class Header {
+
+	private void menuClick(String accion) {
+		RootPanel.get("contenido").clear();
+		BreadCrumbs bc = new BreadCrumbs();
+		String enlaces[] = new String[1];
+		enlaces[0] = accion;
+		bc.construct(enlaces);
+		Pagina contenido;
+		if (accion == "About") {
+			contenido = new PaginaAbout();
+			Titulo.setTitulo("About");
+		}
+		else if (accion == "Contacto") {
+			contenido = new PaginaContacto();
+			Titulo.setTitulo("Contacto");
+		}
+		else if (accion == "Faq") {
+			contenido = new PaginaFaq();
+			Titulo.setTitulo("FAQ");
+		}
+		else if (accion == "Ayuda"){
+			contenido = new PaginaAyuda();
+			Titulo.setTitulo("Ayuda");
+		}
+		else {
+			contenido = new PaginaRegistro();
+			Titulo.setTitulo("Registro");
+		}
+		Menu menu = new Menu();
+		menu.construct("none");
+		contenido.display();
+	}
 	
 	public void display() {
-		//Contenedor del header
-		FlowPanel headerContainer = Layout.createDiv("container_12", "headerContainer");
-		//Header
-		FlowPanel header = Layout.createDivWithId("header");
 		//Logo
-		FlowPanel headerLogo = Layout.createDiv("grid_8", "headerLogo");
+		FlowPanel headerLogo = Layout.createDiv("grid_7", "headerLogo");
 		//Crear titulo
 		HTML titulo = new HTML();
 		titulo.setHTML("<h1><a class=\"logoLink\" href=\"#\"></a></h1>");
 		headerLogo.add(titulo);
 		//Menu superior del header
-		FlowPanel headerMenu = Layout.createDiv("grid_3","headerMenu");
+		FlowPanel headerMenu = Layout.createDiv("grid_4","headerMenu");
 		//Crear lista con cada elemento del menu
 		HorizontalPanel menuSuperior = new HorizontalPanel();
 		menuSuperior.addStyleName("headerMenu");
@@ -28,34 +61,74 @@ public class Header {
 		Anchor faq = new Anchor("FAQS");
 		Anchor ayuda = new Anchor("Ayuda");
 		Anchor about = new Anchor ("About");
+		
+	    contacto.addClickHandler(new ClickHandler() {
+		      public void onClick(ClickEvent event) {
+		        menuClick("Contacto");
+		      }
+	    });
+	    
+	    faq.addClickHandler(new ClickHandler() {
+		      public void onClick(ClickEvent event) {
+		        menuClick("Faq");
+		      }
+	    });	
+	    
+	    ayuda.addClickHandler(new ClickHandler() {
+		      public void onClick(ClickEvent event) {
+		        menuClick("Ayuda");
+		      }
+	    });	
+	    
+	    about.addClickHandler(new ClickHandler() {
+		      public void onClick(ClickEvent event) {
+		        menuClick("About");
+		      }
+	    });	
+		
 		menuSuperior.add(contacto);
 		menuSuperior.add(faq);
 		menuSuperior.add(ayuda);
 		menuSuperior.add(about);
 		headerMenu.add(menuSuperior);
 		
-		//Menu principal
+		//Formulario de inicio de sesion
+		FormPanel loginForm = new FormPanel();
+		TextBox email = new TextBox();
+		PasswordTextBox password = new PasswordTextBox();
+		Anchor submit = new Anchor("Entrar");
+		submit.setStyleName("button");
 		
-		FlowPanel headerNav = Layout.createDivWithId("headerNav");
-		HorizontalPanel nav = new HorizontalPanel();
-		nav.getElement().setId("nav");
-		Anchor home = new Anchor("Home");
-		home.addStyleName("active");
-		Anchor noticias = new Anchor("Noticias");
-		Anchor directo = new Anchor ("En vivo");
+		email.getElement().setAttribute("placeholder", "Email");
+		password.getElement().setAttribute("placeholder", "Contraseña");
 		
-		nav.add(home);
-		nav.add(noticias);
-		nav.add(directo);
+		loginForm.getElement().setId("loginForm");
 		
-		headerNav.add(nav);
+		HorizontalPanel formPanel = new HorizontalPanel();
+		HorizontalPanel registro = new HorizontalPanel();
 		
+		formPanel.add(email);
+		formPanel.add(password);
+		formPanel.add(submit);
 		
-		header.add(headerLogo);
-		header.add(headerMenu);
-		headerContainer.add(header);
-		headerContainer.add(headerNav);
-		RootPanel.get("wrapper").add(headerContainer);
+		loginForm.add(formPanel);		
 		
+		Anchor registroEnlace = new Anchor("¡Regístrate!");
+		HTML registroTexto = new HTML("¿Todavía no tienes cuenta?&nbsp;");
+		
+		registroEnlace.addClickHandler(new ClickHandler() {
+		      public void onClick(ClickEvent event) {
+			        menuClick("Registro");
+			      }
+		    });	
+		
+		registro.add(registroTexto);
+		registro.add(registroEnlace);
+		registro.setStyleName("registrarse");
+		headerMenu.add(loginForm);
+		headerMenu.add(registro);
+		
+		RootPanel.get("header").add(headerLogo);
+		RootPanel.get("header").add(headerMenu);		
 	}
 }

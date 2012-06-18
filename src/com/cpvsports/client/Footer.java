@@ -9,7 +9,6 @@ import com.google.gwt.user.client.ui.Anchor;
 public class Footer {
 	
 	public void display() {
-		FlowPanel footerContainer = Layout.createDiv("container_12", "footerContainer");
 		FlowPanel footer = Layout.createDivWithId("footer");
 		
 		//Articulos del footer (meterlos en un clase seguramente)
@@ -45,8 +44,7 @@ public class Footer {
 		footerArticulo.add(enlacesFooter);
 		footer.add(footerArticulo);
 		footer.add(footerLogo);
-		footerContainer.add(footer);
-		RootPanel.get("wrapper").add(footerContainer);
+		RootPanel.get("footerContainer").add(footer);
 	}
 
 }

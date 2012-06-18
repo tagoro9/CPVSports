@@ -2361,24 +2361,25 @@ html, body {
     padding:0;
 }
 
-.pagina {
+/*.pagina {
    margin-top:30px; 
    padding-bottom: 30px;
-}
+}*/
 
 /********************** HEADER **********************/
 
- #headerContainer {
+ /*#headerContainer {
     background: none repeat scroll 0 0 #141414;
     position: relative;
     z-index: 50;     
- }
+ }*/
  
  #header {
     background: url("../img/bg_header.gif") no-repeat scroll 0 0 transparent;
     height: 80px;
     padding: 20px 0 0;
-    position: relative;     
+    position: relative;    
+    margin-top:30px; 
  }
  
  #header a.logoLink {
@@ -2394,13 +2395,26 @@ html, body {
     margin-left:57px;
  }
  
- #headerMenu a{
+ table.headerMenu {
+ 	margin-left:90px;
+ }
+ 
+ table.headerMenu a{
      background: url("../img/listBullet.png") no-repeat scroll 00 transparent;
      padding:8px;
     color: #FFFFFF;
     font-family: 'Open Sans',sans-serif;
     font-size: 11px;
     font-weight: 600;     
+ }
+ 
+ table.registrarse {
+ 	margin-left: 65px;
+ 	margin-top: -15px;
+ }
+ 
+ table.registrarse a {
+ 	color: #FFF;
  }
  
  #headerNav {
@@ -2439,6 +2453,22 @@ html, body {
  #nav a:hover {
      background: url("../img/liActive.gif") repeat-x scroll 0 0 #6C1817;
  }
+ 
+ /*********************** BREADCRUMBS ************************/
+ 
+ #breadCrumbs {
+ 	background: #141414;
+ }
+ 
+ #breadCrumbs table {
+ 	margin:5px;
+ }
+ 
+ #breadCrumbs a {
+ 	color: #FFF;
+ }
+ 
+ /******************** FIN BREADCRUMBS *********************/
  
  /************************* FIN HEADER ********************/
  
@@ -2711,6 +2741,7 @@ html, body {
     background: url("../img/bg_footer.gif") repeat-x scroll 0 0 #333333;
     padding: 16px 0 12px;
     position: relative;
+    margin-bottom: 30px;
  }
  
  #footerContainer .contenidoArticulo {
@@ -2780,8 +2811,135 @@ html, body {
  }
  /*********************** FIN FOOTER *****************/
  
+  /********************** FORMULARIOS ********************/
+ 
+ #loginForm {
+     margin-left: 25px;
+ }
+ 
+ #loginForm input {
+     width: 100px;
+     float:right;
+     height: 8px;
+     margin-right: 5px;
+ }
+ 
+ a.button {
+    background: url("../img/fecha.gif") repeat-x scroll 0 0 #141414;
+    color: #FFFFFF;
+    text-decoration: none;
+    float: right;
+    font-family: 'Open Sans',sans-serif;
+    font-size: 10px;
+    padding: 3px 8px;     
+ }
  
  
+ /********************* FIN FORMULARIOS *************/
+ 
+ /********************** PAGINA CONTACTO ********************/
+ 
+ #contacto {
+ 	text-align: center;
+ }
+ 
+ #contacto .text h1{
+	text-align: center;
+	margin-bottom: 40px;
+}
+
+#contacto .text p{
+	font-weight:bold;
+}
+
+#contacto .text .brand, #ayuda .text .brand {
+	color: #EABF09;
+	font-size: 20px;
+	font-weight:bold;
+}
+
+ul.aboutGallery img {
+    display: block;
+    margin-bottom: 12px;
+    width: 100px;	
+}
+
+ul.aboutGallery {
+	margin-left: 230px;
+    margin-top:40px;
+	list-style: none outside none;
+}
+
+ul.aboutGallery li {
+	display:inline;
+	line-height:18px;
+}
+
+ul.aboutGallery a:after {
+	content: attr(title);
+}
+
+ul.aboutGallery a {
+    color: #000000;
+    font-weight: bold;
+    display: inline;
+    float: left;
+    font-family: "Marker Felt",sans-serif;
+    font-size: 13px;
+    margin: 0 0 27px 30px;
+    padding: 10px 10px 15px;
+    text-align: center;
+    text-decoration: none;
+    width: auto;
+    background: none repeat scroll 0 0 #FFFFFF;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.25);        	
+	-webkit-transform: rotate(-2deg);
+	-moz-transform: rotate(-2deg);
+}
+ 
+/* Rotate all even images 2 degrees */
+ul.aboutGallery li:nth-child(even) a {
+	-webkit-transform: rotate(2deg);
+	-moz-transform: rotate(2deg);
+}
+ 
+/* Don't rotate every third image, but offset its position */
+ul.aboutGallery li:nth-child(3n) a {
+	-webkit-transform: none;
+	-moz-transform: none;
+	position: relative;
+	top: -5px;
+}
+ 
+/* Rotate every fifth image by 5 degrees and offset it */
+ul.aboutGallery li:nth-child(5n) a {
+	-webkit-transform: rotate(5deg);
+	-moz-transform: rotate(5deg);
+	position: relative;
+	right: 5px;
+}
+
+/*ul.aboutGallery li a:hover {
+	-webkit-transform: scale(1.25);
+	-moz-transform: scale(1.25);
+	position: relative;
+	z-index: 5;
+}*/
+
+/* Add drop shadows and smooth out the transition (Safari only) */
+ul.aboutGallery a {
+	-webkit-transition: -webkit-transform .15s linear;
+	-webkit-box-shadow: 0 3px 6px rgba(0,0,0,.25);
+	-moz-box-shadow: 0 3px 6px rgba(0,0,0,.25);
+}
+ 
+/* On hover, darken the shadows a bit */
+ul.aboutGallery a {
+	-webkit-box-shadow: 0 3px 6px rgba(0,0,0,.5);
+	-moz-box-shadow: 0 3px 6px rgba(0,0,0,.5);
+}
+ 
+ /********************** FIN PAGINA CONTACTO ******************/
  
  
  
