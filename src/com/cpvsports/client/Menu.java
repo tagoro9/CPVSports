@@ -2,6 +2,7 @@ package com.cpvsports.client;
 
 import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
+import com.google.gwt.user.client.Cookies;
 import com.google.gwt.user.client.ui.Anchor;
 import com.google.gwt.user.client.ui.HorizontalPanel;
 import com.google.gwt.user.client.ui.RootPanel;
@@ -13,6 +14,8 @@ public class Menu {
 	private Anchor enVivo;
 	private Anchor miCuenta;
 	private Anchor publicar;
+	
+	private HorizontalPanel nav;
 	
 	private Anchor tenis;
 	private Anchor futbol;
@@ -73,8 +76,10 @@ public class Menu {
 			BreadCrumbs bc = new BreadCrumbs();
 			String enlaces[] = new String[1];
 			enlaces[0] = "En vivo";
+			Pagina enVivo = new EnVivo();
 			bc.construct(enlaces);
 			Titulo.setTitulo("En vivo");
+			enVivo.display();
 		}
 	}	
 	
@@ -97,12 +102,14 @@ public class Menu {
 			enlaces[0] = "Publicar";
 			bc.construct(enlaces);
 			Titulo.setTitulo("Publicar");
+			Pagina contenido = new Publicar();
+			contenido.display();
 		}
 	}		
 	
 	public void construct(String activo) {
 		//Menu principal
-				HorizontalPanel nav = new HorizontalPanel();
+				nav = new HorizontalPanel();
 				nav.getElement().setId("nav");
 				
 				home = new Anchor("Home");
@@ -156,8 +163,10 @@ public class Menu {
 				nav.add(home);
 				nav.add(noticias);
 				nav.add(enVivo);
-				nav.add(miCuenta);
-				nav.add(publicar);
+				if (Cookies.getCookie("id_sesion") != null) {
+					nav.add(miCuenta);
+					nav.add(publicar);
+				}
 				RootPanel.get("headerNav").clear();
 				RootPanel.get("headerNav").add(nav);
 	}

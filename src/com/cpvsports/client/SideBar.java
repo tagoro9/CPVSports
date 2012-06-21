@@ -55,31 +55,6 @@ public class SideBar {
 	}
 	
 	
-	public FlowPanel loadMiscelanea() {
-		FlowPanel miscelanea = Layout.createDivWithId("miscelanea");
-		//Titulo
-		HTML tituloMiscelanea = new HTML();
-		tituloMiscelanea.setStyleName("sidebarTitle");
-		tituloMiscelanea.setHTML("<h3>Miscelánea</h3>");
-		
-		FlowPanel contenido = Layout.createDivWithId("contenidoMiscelanea");
-		
-		//TODO Pasar a una funcion!!
-		Anchor titulo = new Anchor("Lorem Ipsum miscelanea");
-		HTMLPanel contenidoMisc = new HTMLPanel("<p>Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et.</p>");
-		Anchor mas = new Anchor("");
-		mas.setStyleName("readMore");
-		contenidoMisc.add(mas);
-		
-		contenido.add(titulo);
-		contenido.add(contenidoMisc);
-		
-		miscelanea.add(tituloMiscelanea);
-		miscelanea.add(contenido);
-		
-		return miscelanea;
-	}
-	
 	public FlowPanel construct() {
 		FlowPanel sideBar = Layout.createDiv("grid_4", "sideBar");
 		
@@ -89,7 +64,6 @@ public class SideBar {
 		
 		sideBar.add(banner);
 		sideBar.add(loadEventos());
-		sideBar.add(loadMiscelanea());
 		
 		return sideBar;
 	}

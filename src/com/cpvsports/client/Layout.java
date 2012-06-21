@@ -15,6 +15,20 @@ public class Layout {
         return flowPanel;    	
     }
 
+    public static void reload() {
+    	Titulo.setTitulo("Home");
+    	Header header = new Header();
+    	Menu menu = new Menu();
+    	BreadCrumbs bc = new BreadCrumbs();
+    	Pagina home = new Home();
+    	header.display();
+    	menu.construct("home");
+    	String[] enlaces = new String[1];
+    	enlaces[0] = "Home";
+    	bc.construct(enlaces);
+    	home.display();
+    }
+    
      public static FlowPanel createDiv(String style,String id) {
         FlowPanel flowPanel = new FlowPanel();
         flowPanel.setStylePrimaryName(style);

@@ -5,8 +5,38 @@
          version="2.5"
          xmlns="http://java.sun.com/xml/ns/javaee">
 
-  <!-- Servlets -->
+<!-- Servlets -->
+  <servlet>
+    <servlet-name>registrarServlet</servlet-name>
+    <servlet-class>com.cpvsports.server.RegistrarServiceImpl</servlet-class>
+  </servlet>
   
+  <servlet-mapping>
+    <servlet-name>registrarServlet</servlet-name>
+    <url-pattern>/cpvsports/registrar</url-pattern>
+  </servlet-mapping> 
+
+  <servlet>
+    <servlet-name>noticiasServlet</servlet-name>
+    <servlet-class>com.cpvsports.server.NoticiasServiceImpl</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+    <servlet-name>noticiasServlet</servlet-name>
+    <url-pattern>/cpvsports/noticias</url-pattern>
+  </servlet-mapping> 
+
+  <servlet>
+    <servlet-name>loginServlet</servlet-name>
+    <servlet-class>com.cpvsports.server.LoginServiceImpl</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+    <servlet-name>loginServlet</servlet-name>
+    <url-pattern>/cpvsports/login</url-pattern>
+  </servlet-mapping> 
+
+    
   <!-- Default page to serve -->
   <welcome-file-list>
     <welcome-file>CpvSports.html</welcome-file>

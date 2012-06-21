@@ -2396,7 +2396,7 @@ html, body {
  }
  
  table.headerMenu {
- 	margin-left:90px;
+ 	margin-left:140px;
  }
  
  table.headerMenu a{
@@ -2406,6 +2406,17 @@ html, body {
     font-family: 'Open Sans',sans-serif;
     font-size: 11px;
     font-weight: 600;     
+ }
+ 
+ table.cerrarSesion {
+ 	margin-left: 105px;
+ 	position:relative;
+ 	left:6px;
+ 	color: #FFF;
+ }
+ 
+ table.cerrarSesion a {
+    color: #F6070B;
  }
  
  table.registrarse {
@@ -2488,6 +2499,11 @@ html, body {
  #titularPortada {
     background: url("../img/bg_portada.gif") repeat-x scroll 0 0 #141414;
     margin-bottom: 5px;
+ }
+ 
+ #titularPortada.enVivo {
+ 	position:relative;
+ 	top: -2px;
  }
  
  #titularPortada {
@@ -2732,6 +2748,69 @@ html, body {
 }
  /******************** FIN SIDEBAR ***************************/
  
+ 
+ /************************************ SIDEBAR NOTICIAS **********************/
+ #sideBar .noticias-nav {
+ }
+ 
+ #sideBar #noticias-1 {
+ }
+ 
+ #sideBar .noticia1 {
+ }
+ 
+ #sideBar .noticia1 h6 {
+ 	margin-bottom: 1px;
+ }
+ 
+#sideBar div.fecha1 {
+	background: url("../img/fecha.gif") repeat-x scroll 0 0 #141414;
+	color: white;
+	display: inline-block;
+	font-family: 'Open Sans',sans-serif;
+	font-size: 10px;
+	margin-bottom: 10px;
+	padding: 0px 5px;
+	text-transform: uppercase;
+}
+ /******************************** FIN SIDEBAR NOTICIAS **********************/
+ 
+ /******************* COMENTARIOS NOTICIAS **********************/
+ 
+ .comentario hr {
+ 	margin-left: 20px;
+ 	margin-right:20px;
+ }
+ 
+ .comentario .autor {
+ 	float:right;
+ 	margin-right: 20px;
+	padding: 5px;
+	color: #000;
+	font-weight: bold;
+ }
+ 
+ .comentario .texto {
+ 	padding-left:30px;
+ }
+ 
+ .comentario .fecha {
+ 	margin-right: 30px;
+ }
+ 
+ form.publicarComentario {
+ 	padding: 5px 30px;
+ }
+ 
+ form.publicarComentario textarea {
+ 	width:85%;
+ 	resize: none;
+ 	height: 45px;
+ }
+ 
+ /****************** FIN COMENTARIOS NOTICIAS ************/
+ 
+ 
 
  /********************* FIN CONTENIDO ************************/
  
@@ -2785,8 +2864,8 @@ html, body {
  }
  
  #footerLogo {
-     padding-left: 140px;
-     margin-left:380px;
+     /*padding-left: 140px;
+     margin-left:380px;*/
  }
  
  #footerLogo h1 {
