@@ -2,16 +2,15 @@ package com.cpvsports.server;
 
 import java.io.Serializable;
 import javax.persistence.*;
-import java.util.Date;
 
 
 /**
- * The persistent class for the comentarios database table.
+ * The persistent class for the comentarios_online database table.
  * 
  */
 @Entity
-@Table(name="comentarios")
-public class Comentario implements Serializable {
+@Table(name="comentarios_online")
+public class ComentariosOnline implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
@@ -20,16 +19,10 @@ public class Comentario implements Serializable {
 
 	private String contenido;
 
-    @Temporal( TemporalType.TIMESTAMP)
-	private Date fecha;
-
-	@Column(name="id_noticia")
-	private int idNoticia;
-
 	@Column(name="id_usuario")
 	private int idUsuario;
 
-    public Comentario() {
+    public ComentariosOnline() {
     }
 
 	public int getId() {
@@ -46,22 +39,6 @@ public class Comentario implements Serializable {
 
 	public void setContenido(String contenido) {
 		this.contenido = contenido;
-	}
-
-	public Date getFecha() {
-		return this.fecha;
-	}
-
-	public void setFecha(Date fecha) {
-		this.fecha = fecha;
-	}
-
-	public int getIdNoticia() {
-		return this.idNoticia;
-	}
-
-	public void setIdNoticia(int idNoticia) {
-		this.idNoticia = idNoticia;
 	}
 
 	public int getIdUsuario() {

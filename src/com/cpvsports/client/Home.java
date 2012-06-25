@@ -1,55 +1,55 @@
 package com.cpvsports.client;
 
+import com.google.gwt.user.client.rpc.AsyncCallback;
 import com.google.gwt.user.client.ui.FlowPanel;
 import com.google.gwt.user.client.ui.HorizontalPanel;
 import com.google.gwt.user.client.ui.RootPanel;
 import com.google.gwt.user.client.ui.Anchor;
 import com.google.gwt.user.client.ui.HTML;
 import com.google.gwt.user.client.ui.Image;
+import com.google.gwt.core.client.GWT;
 import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
 import com.google.gwt.user.client.Window;
 
 public class Home implements Pagina {
 	
+	private final NoticiasServiceAsync servicioNoticias = GWT.create(NoticiasService.class);
+	private final LoginServiceAsync servicioLogin = GWT.create(LoginService.class);
+	private final ComentariosServiceAsync servicioComentarios = GWT.create(ComentariosService.class);
+	
+	private FlowPanel main;
+	
 	private Anchor ultimas;
 	private Anchor masVistas;
-	private Anchor favoritos;
 	private FlowPanel listadoNoticias;
 	
 	//Eventos
 	private void ultimasClick() {
 		if (getActive() != "ultimas") {
 			setActive(ultimas);
+			ultimasNoticias();
 		}
 	}
 	
 	private void masVistasClick() {
 		if (getActive() != "masVistas") {
 			setActive(masVistas);
+			masVistas();
 		}
 		
-	}
-	
-	private void favoritosClick() {	
-		if (getActive() != "favoritos") {
-			setActive(favoritos);
-		}
 	}
 	
 	private String getActive() {
 		if (ultimas.getStylePrimaryName().contains("active"))
 			return "ultimas";
-		else if (masVistas.getStylePrimaryName().contains("active"))
-			return "masVistas";
 		else
-			return "favoritos";
+			return "masVistas";
 	}
 	
 	private void setActive(Anchor activar) {
 		ultimas.setStyleName("");
 		masVistas.setStyleName("");
-		favoritos.setStyleName("");
 		activar.setStyleName("active");
 	}
 	
@@ -57,76 +57,118 @@ public class Home implements Pagina {
 	
 	//Construir interfaz
 	
-	private FlowPanel loadPortada() {
-		//Portada
-		FlowPanel portada = Layout.createDivWithId("portada");
-		//Imagen
-		Image imagenPortada = new Image("img/portada.jpg");
-		//Titular
-		FlowPanel titularPortada = Layout.createDivWithId("titularPortada");
-		//Crear contenido del titular
-		//Fecha
-		HTML fecha = new HTML();
-		fecha.setStyleName("fecha");
-		fecha.setHTML("15 DEC, 2012");
-		//Titular
-		HTML titular = new HTML();
-		titular.setHTML("<h2>Mi titular demasiado largo para caber en una linea quepasara</h2>");
-		//Contenido
-		HTML titularContenido = new HTML();
-		titularContenido.setHTML("<p>" +
-				"After checking out the visual, you should understand how to create th" +
-                "e mockup’s grid. Using the widths, match up the class #’s from the list and lets" +
-                "throw some code together. Remember to add the clearing div at the end of each" +
-                "row. Don’t forget to include the stylsheets included in the Grid 960 package." +
-				"</p>");
-		titularPortada.add(fecha);
-		titularPortada.add(titular);
-		titularPortada.add(titularContenido);
-		
-		portada.add(imagenPortada);
-		portada.add(titularPortada);	
-		return portada;
+	private void loadPortada() {
+		servicioNoticias.ultimasNoticias(new AsyncCallback<Integer[]>() {
+			public void onFailure(Throwable caught) {
+				Window.alert("Error al cargar la portada");
+			}
+			public void onSuccess(Integer[] result) {
+				if (result[0] != null) {
+					final Integer id = result[0];
+					servicioNoticias.cargarBigNoticia(id, new AsyncCallback<String[]>(){
+						public void onFailure(Throwable caught){
+							Window.alert("Error al cargar la noticia");
+						}
+						public void onSuccess(String[] result){
+							
+							
+							//Portada
+							FlowPanel portada = Layout.createDivWithId("portada");
+							//Imagen
+							Image imagenPortada = new Image(result[4]);
+							//Titular
+							FlowPanel titularPortada = Layout.createDivWithId("titularPortada");
+							//Crear contenido del titular
+							//Fecha
+							HTML fecha = new HTML();
+							fecha.setStyleName("fecha");
+							fecha.setHTML(result[2]);
+							//Titular
+							HTML titular = new HTML();
+							titular.setHTML("<h2>"+result[0]+"</h2>");
+							//Contenido
+							HTML titularContenido = new HTML();
+							titularContenido.setHTML("<p>" + result[1] +"</p>");
+							titularPortada.add(fecha);
+							titularPortada.add(titular);
+							titularPortada.add(titularContenido);
+							
+							portada.add(imagenPortada);
+							portada.add(titularPortada);							
+							main.add(portada);
+							loadUltimas();
+							//Aumentar las visitas de la noticia
+							servicioNoticias.aumentarVisitas(id, new AsyncCallback<Integer>(){
+								public void onFailure(Throwable caught) {
+									Window.alert("Error al aumentar las visitas de la noticia");
+								}
+								public void onSuccess(Integer result) {
+								}
+							});
+						}
+					});							
+				}
+				else
+					Window.alert("No hay noticias");
+			}
+		});
 	}
 	
 	
-	private FlowPanel loadNoticia() {
-		FlowPanel noticia = Layout.createDiv("noticia");
-		//Imagen
-		FlowPanel imagenNoticiaContainer = Layout.createDiv("imagenNoticia grid_2");
-		Image imagenNoticia = new Image("img/noticia.jpg");
-		imagenNoticiaContainer.add(imagenNoticia);
-		//Contenido
-		FlowPanel contenidoNoticia = Layout.createDiv("contenidoNoticia grid_5");
-		//Fecha
-		HTML fecha = new HTML();
-		fecha.setStyleName("fecha");
-		fecha.setHTML("15 DEC, 2012");
-		//Titulo
-		HTML titulo = new HTML();
-		titulo.setHTML("<h2>Titular de la noticia deportiva</h2>");
-		//Texto
-		HTML texto = new HTML();
-		texto.setHTML("<p>" +
-                      "After checking out the visual, you should understand how to create th" +
-                      "e mockup’s grid. Using the widths, match up the class #’s from the list and lets" +
-                      "throw some code together. Remember to add the clearing div at the end of each" + 
-                      "row. Don’t forget to include the stylsheets included in the Grid 960 package." +                                        
-                      "After checking out the visual, you should understand how to create th" +
-                      "e mockup’s grid. Using the widths, match up the class #’s from the list and lets" +
-                      "throw some code together. Remember to add the clearing div at the end of each" +
-                      "row. Don’t forget to include the stylsheets included in the Grid 960 package." +                                                                                
-                      "</p>");
-		contenidoNoticia.add(fecha);
-		contenidoNoticia.add(titulo);
-		contenidoNoticia.add(texto);
-		
-		noticia.add(imagenNoticiaContainer);
-		noticia.add(contenidoNoticia);
-		return noticia;
+	private void loadNoticia(Integer id_noticia) {
+		final Integer id = id_noticia;
+		servicioNoticias.cargarBigNoticia(id_noticia, new AsyncCallback<String[]> () {
+			public void onFailure (Throwable caught) {
+				Window.alert("Fallo al cargar noticia");
+			}
+			
+			public void onSuccess (String[] result) {
+				FlowPanel noticia = Layout.createDiv("noticia");
+				//Imagen
+				FlowPanel imagenNoticiaContainer = Layout.createDiv("imagenNoticia grid_2");
+				Image imagenNoticia = new Image(result[4]);
+				imagenNoticiaContainer.add(imagenNoticia);
+				//Contenido
+				FlowPanel contenidoNoticia = Layout.createDiv("contenidoNoticia grid_5");
+				//Fecha
+				HTML fecha = new HTML();
+				fecha.setStyleName("fecha");
+				fecha.setHTML(result[2]);
+				final String tituloNoticia = result[0];
+				//Titulo
+				HTML titulo = new HTML();		
+				titulo.setHTML("<h2>"+ result[0] +"</h2>");
+				titulo.addClickHandler(new ClickHandler(){
+					public void onClick(ClickEvent event) {
+				    	Titulo.setTitulo("Noticias");
+				    	Header header = new Header();
+				    	Menu menu = new Menu();
+				    	BreadCrumbs bc = new BreadCrumbs();
+				    	Pagina noticias = new Noticias();
+				    	header.display(id);
+				    	menu.construct("noticias");
+				    	String[] enlaces = new String[2];
+				    	enlaces[0] = "Noticias";
+				    	enlaces[1] = tituloNoticia;
+				    	bc.construct(enlaces);
+				    	noticias.display(id);
+					}
+				});
+				//Texto
+				HTML texto = new HTML();
+				texto.setHTML("<p>"+ result[1] +"</p>");
+				contenidoNoticia.add(fecha);
+				contenidoNoticia.add(titulo);
+				contenidoNoticia.add(texto);
+				
+				noticia.add(imagenNoticiaContainer);
+				noticia.add(contenidoNoticia);
+				listadoNoticias.add(noticia);
+			}
+		});
 	}
 		
-	private FlowPanel loadUltimas() {
+	private void loadUltimas() {
 		FlowPanel noticias = Layout.createDivWithId("noticias");
 		
 		//Menu de navegacion
@@ -137,7 +179,6 @@ public class Home implements Pagina {
 		ultimas = new Anchor("Últimas noticias");
 		ultimas.setStyleName("active");
 		masVistas = new Anchor("Las más vistas");
-		favoritos = new Anchor("Favoritas");
 		
 		//Eventos al hacer click en el menu
 	    ultimas.addClickHandler(new ClickHandler() {
@@ -151,17 +192,10 @@ public class Home implements Pagina {
 		        masVistasClick();
 		      }
 	    });
-	    
-	    favoritos.addClickHandler(new ClickHandler() {
-		      public void onClick(ClickEvent event) {
-		        favoritosClick();
-		      }
-	    });		
 		
 		
 		noticiasNav.add(ultimas);
 		noticiasNav.add(masVistas);
-		noticiasNav.add(favoritos);
 		
 		noticiasNavContainer.add(noticiasNav);
 		
@@ -169,19 +203,51 @@ public class Home implements Pagina {
 		
 		listadoNoticias = Layout.createDiv("listaNoticias", "noticias-1");
 		
-		listadoNoticias.add(loadNoticia());
-		
 		noticias.add(listadoNoticias);
 		
+		ultimasNoticias();
 		
-		return noticias;
+		main.add(noticias);
 	}
 	
-	public void display() {
+	public void ultimasNoticias () {
+		listadoNoticias.clear();
+		servicioNoticias.ultimasNoticias(new AsyncCallback<Integer[]> (){
+			public void onFailure (Throwable caught) {
+				Window.alert("Fallo al cargar ultimas noticias");
+			}
+			
+			public void onSuccess (Integer[] result) {
+				for (int i = 0; i < result.length; i++) {
+					if (result[i] != null) {
+						loadNoticia(result[i]);
+					}
+				}
+			}
+		});
+	}
+	
+	public void masVistas () {
+		listadoNoticias.clear();
+		servicioNoticias.noticiasMasVistas(new AsyncCallback<Integer[]> (){
+			public void onFailure (Throwable caught) {
+				Window.alert("Fallo al cargar ultimas noticias");
+			}
+			
+			public void onSuccess (Integer[] result) {
+				for (int i = 0; i < result.length; i++) {
+					if (result[i] != null) {
+						loadNoticia(result[i]);
+					}
+				}
+			}
+		});
+	}
+	
+	public void display(Integer id) {
 		RootPanel.get("contenido").clear();
-		FlowPanel main = Layout.createDiv("grid_8", "main");
-		main.add(loadPortada());
-		main.add(loadUltimas());
+		main = Layout.createDiv("grid_8", "main");
+		loadPortada();
 		SideBar sidebar = new SideBar();
 		RootPanel.get("contenido").add(main);
 		

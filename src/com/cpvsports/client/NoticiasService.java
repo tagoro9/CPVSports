@@ -9,4 +9,7 @@ public interface NoticiasService extends RemoteService {
 	public Integer publicar(String[] campos);
 	public String[] cargarNoticia(Integer id_noticia);
 	public String[] cargarBigNoticia(Integer id_noticia);
+	public Integer[] ultimasNoticias();
+	public Integer aumentarVisitas(Integer id_noticia);
+	public Integer[] noticiasMasVistas();
 }

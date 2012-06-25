@@ -21,7 +21,7 @@ public class Usuario implements Serializable {
 
 	private String email;
 
-    @Temporal( TemporalType.DATE)
+    @Temporal( TemporalType.TIMESTAMP)
 	@Column(name="fecha_de_registro")
 	private Date fechaDeRegistro;
 

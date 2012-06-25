@@ -21,32 +21,23 @@ public class SideBar {
 		FlowPanel contenido = Layout.createDivWithId("contenidoEventos");
 		//Fecha
 		HTML fecha = new HTML();
-		fecha.setHTML("<span>15 DEC, 2012</span>");
+		fecha.setHTML("<span>27 JUL, 2012</span>");
 		//Imagen
 		Image imagenEvento = new Image("img/eventos.jpg");
 		//Titulo
 		HTML tituloEvento = new HTML();
-		tituloEvento.setHTML("<h4>Lorem Ipsum</h4>");
+		tituloEvento.setHTML("<h4>Juegos olímpicos 2012</h4>");
 		//Texto
 		HTML textoEvento = new HTML();
 		textoEvento.setHTML("<p>"+
-                                "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor"+
-                                "incididunt ut labore et dolore magna aliqua. Ut enim."+                                    
+                                "El próximo 27 de julio darán comienzo los XXX juegos olímpicos que tendrán lugar"+
+                                " en Londres. ¡No te lo pierdas!"+                                    
                             "</p>");
-		//Comentarios
-		HTML comentarios = new HTML();
-		comentarios.setHTML("4 comentarios");
-		comentarios.setStyleName("comentarios");
-		//Leer mas
-		Anchor mas = new Anchor("Leer más");
-		mas.setStyleName("readMore");
 		
 		contenido.add(fecha);
 		contenido.add(imagenEvento);
 		contenido.add(tituloEvento);
 		contenido.add(textoEvento);
-		contenido.add(comentarios);
-		contenido.add(mas);
 		
 		eventos.add(tituloEventos);
 		eventos.add(contenido);

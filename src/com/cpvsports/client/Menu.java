@@ -53,7 +53,7 @@ public class Menu {
 			bc.construct(enlaces);
 			Titulo.setTitulo("Home");
 			Pagina home = new Home();
-			home.display();
+			home.display(0);
 		}
 	}
 	
@@ -66,7 +66,7 @@ public class Menu {
 			bc.construct(enlaces);
 			Titulo.setTitulo("Noticias");
 			Pagina noticias = new Noticias();
-			noticias.display();
+			noticias.display(0);
 		}
 	}
 
@@ -79,7 +79,7 @@ public class Menu {
 			Pagina enVivo = new EnVivo();
 			bc.construct(enlaces);
 			Titulo.setTitulo("En vivo");
-			enVivo.display();
+			enVivo.display(0);
 		}
 	}	
 	
@@ -103,7 +103,7 @@ public class Menu {
 			bc.construct(enlaces);
 			Titulo.setTitulo("Publicar");
 			Pagina contenido = new Publicar();
-			contenido.display();
+			contenido.display(0);
 		}
 	}		
 	

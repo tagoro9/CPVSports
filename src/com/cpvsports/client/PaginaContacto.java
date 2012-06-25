@@ -4,7 +4,7 @@ import com.google.gwt.user.client.ui.HTML;
 import com.google.gwt.user.client.ui.RootPanel;
 
 public class PaginaContacto implements Pagina {
-	public void display() {
+	public void display(Integer id) {
 		RootPanel.get("contenido").clear();
 		HTML contenido = new HTML();
 		contenido.setHTML("<div id=\"contacto\" class=\"grid_12\">"+

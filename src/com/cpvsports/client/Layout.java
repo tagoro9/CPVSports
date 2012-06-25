@@ -21,12 +21,12 @@ public class Layout {
     	Menu menu = new Menu();
     	BreadCrumbs bc = new BreadCrumbs();
     	Pagina home = new Home();
-    	header.display();
+    	header.display(0);
     	menu.construct("home");
     	String[] enlaces = new String[1];
     	enlaces[0] = "Home";
     	bc.construct(enlaces);
-    	home.display();
+    	home.display(0);
     }
     
      public static FlowPanel createDiv(String style,String id) {

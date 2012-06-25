@@ -14,7 +14,17 @@
   <servlet-mapping>
     <servlet-name>registrarServlet</servlet-name>
     <url-pattern>/cpvsports/registrar</url-pattern>
-  </servlet-mapping> 
+  </servlet-mapping>
+  
+    <servlet>
+    <servlet-name>comentariosServlet</servlet-name>
+    <servlet-class>com.cpvsports.server.ComentariosServiceImpl</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+    <servlet-name>comentariosServlet</servlet-name>
+    <url-pattern>/cpvsports/comentarios</url-pattern>
+  </servlet-mapping>  
 
   <servlet>
     <servlet-name>noticiasServlet</servlet-name>

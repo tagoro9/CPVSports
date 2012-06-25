@@ -21,6 +21,7 @@ public class Noticias implements Pagina{
 		
 	private final NoticiasServiceAsync servicioNoticias = GWT.create(NoticiasService.class);
 	private final LoginServiceAsync servicioLogin = GWT.create(LoginService.class);
+	private final ComentariosServiceAsync servicioComentarios = GWT.create(ComentariosService.class);
 	
 		private FlowPanel main;
 		private FlowPanel sideBar;
@@ -29,52 +30,63 @@ public class Noticias implements Pagina{
 	
 		//Construir interfaz
 		
-		private FlowPanel loadPortada() {
-			//Portada
-			FlowPanel portada = Layout.createDivWithId("portada");
-			//Imagen
-			Image imagenPortada = new Image("img/portada.jpg");
-			//Titular
-			FlowPanel titularPortada = Layout.createDivWithId("titularPortada");
-			//Crear contenido del titular
-			//Fecha
-			HTML fecha = new HTML();
-			fecha.setStyleName("fecha");
-			fecha.setHTML("15 DEC, 2012");
-			//Titular
-			HTML titular = new HTML();
-			titular.setHTML("<h2>Mi titular demasiado largo para caber en una linea quepasara</h2>");
-			//Contenido
-			HTML titularContenido = new HTML();
-			titularContenido.setHTML("<p>" +
-					"After checking out the visual, you should understand how to create th" +
-	                "e mockup’s grid. Using the widths, match up the class #’s from the list and lets" +
-	                "throw some code together. Remember to add the clearing div at the end of each" +
-	                "row. Don’t forget to include the stylsheets included in the Grid 960 package." +
-					"</p>");
-			titularPortada.add(fecha);
-			titularPortada.add(titular);
-			titularPortada.add(titularContenido);
-			
-			portada.add(imagenPortada);
-			portada.add(titularPortada);	
-			return portada;
+		private void loadPortada() {
+			servicioNoticias.ultimasNoticias(new AsyncCallback<Integer[]>() {
+				public void onFailure(Throwable caught) {
+					Window.alert("Error al cargar la portada");
+				}
+				public void onSuccess(Integer[] result) {
+					if (result[0] != null)
+						loadBigNoticia(result[0]);
+					else
+						Window.alert("No hay noticias");
+				}
+			});
 		}
 		
-		private FlowPanel loadComentario() {
-			FlowPanel comentario = Layout.createDiv("comentario");
-			HTML separador = new HTML("<hr></hr>");
-			HTML texto = new HTML("Esta noticia es mentira");
-			HTML autor = new HTML("Victor Mora");
-			HTML fecha = new HTML("23 DIC 2012");
-			fecha.setStyleName("fecha");
-			autor.setStyleName("autor");
-			texto.setStyleName("texto");
-			comentario.add(texto);
-			comentario.add(fecha);
-			comentario.add(autor);
-			comentario.add(separador);
-			return comentario; 
+		private void loadComentario(Integer id_comentario) {
+			final Integer id = id_comentario;
+			servicioComentarios.loadComentario(id_comentario, new AsyncCallback<String[]>(){
+				public void onFailure(Throwable caught) {
+					Window.alert("Error al cargar el comentario");
+				}
+				public void onSuccess(String[] result) {
+					FlowPanel comentario = Layout.createDiv("comentario");
+					HTML separador = new HTML("<hr></hr>");
+					HTML texto = new HTML(result[1]);
+					HTML autor = new HTML(result[2]);
+					HTML fecha = new HTML(result[0]);
+					fecha.setStyleName("fecha");
+					autor.setStyleName("autor");
+					texto.setStyleName("texto");
+					comentario.add(texto);
+					comentario.add(fecha);
+					if (result[3].equals(Cookies.getCookie("id_usuario"))) {
+						Anchor borrar = new Anchor("Borrar");
+						borrar.setStyleName("button");
+						comentario.add(borrar);
+						borrar.addClickHandler(new ClickHandler(){
+							public void onClick(ClickEvent event) {
+								borrarComentario(id);
+							}
+						});
+					}	
+					comentario.add(autor);				
+					comentario.add(separador);
+					comentarios.add(comentario);
+				}
+			}); 
+		}
+		
+		private void borrarComentario(Integer id_comentario){
+			servicioComentarios.borrarComentario(id_comentario, new AsyncCallback<Integer>() {
+				public void onFailure(Throwable caught) {
+					Window.alert("Error al borrar el comentario");
+				}
+				public void onSuccess(Integer result) {
+					loadComentarios(result);
+				}
+			});
 		}
 		
 		private void loadComentarios(Integer id_noticia) {
@@ -87,45 +99,54 @@ public class Noticias implements Pagina{
 			titulo.setStyleName("active");
 			comentariosNav.add(titulo);
 			comentariosNavContainer.add(comentariosNav);
-			
+			final Integer id = id_noticia;
 			comentarios.clear();
 			comentarios.add(comentariosNavContainer);
-			comentarios.add(loadComentario());
-			comentarios.add(loadComentario());
-			
-			if (Cookies.getCookie("id_sesion") != null) {
-				servicioLogin.isLogged(Cookies.getCookie("id_sesion"), new AsyncCallback<String>() {
-					public void onFailure(Throwable caught) {
-						Window.alert("Imposible conectar con el servidor");
+			servicioComentarios.getComentarios(id_noticia, new AsyncCallback<Integer[]>() {
+				public void onFailure(Throwable caught) {
+					Window.alert("Error al cargar los comentarios");
+				}
+				public void onSuccess(Integer[] result) {
+					for (int i = 0; i < result.length; i++) {
+						if (result[i] != null)
+							loadComentario(result[i]);
 					}
-					public void onSuccess(String result) {
-						if (result != null) { //Si esta logueado se crea el formulario
-							//Formulario para añadir un nuevo comentario
-							FormPanel formComentario = new FormPanel();
-							FlowPanel formContainer = new FlowPanel();
-							HTML tituloForm = new HTML("<h6>Publicar un comentario</h6>");
-							final TextArea comentario = new TextArea();
-							Anchor publicar = new Anchor("Enviar");
-							publicar.setStyleName("button");
-							formComentario.setStyleName("publicarComentario");
-							formContainer.add(tituloForm);
-							formContainer.add(comentario);
-							formContainer.add(publicar);
-							formComentario.add(formContainer);
-							comentarios.add(formComentario);
-							//Al enviar el formulario
-							publicar.addClickHandler(new ClickHandler(){
-								public void onClick(ClickEvent event) {
-									publicarComentario(comentario.getText());
+					if (Cookies.getCookie("id_sesion") != null) {
+						servicioLogin.isLogged(Cookies.getCookie("id_sesion"), new AsyncCallback<String>() {
+							public void onFailure(Throwable caught) {
+								Window.alert("Imposible conectar con el servidor");
+							}
+							public void onSuccess(String result) {
+								if (result != null) { //Si esta logueado se crea el formulario
+									//Formulario para añadir un nuevo comentario
+									FormPanel formComentario = new FormPanel();
+									FlowPanel formContainer = new FlowPanel();
+									HTML tituloForm = new HTML("<h6>Publicar un comentario</h6>");
+									final TextArea comentario = new TextArea();
+									Anchor publicar = new Anchor("Enviar");
+									publicar.setStyleName("button");
+									formComentario.setStyleName("publicarComentario");
+									formContainer.add(tituloForm);
+									formContainer.add(comentario);
+									formContainer.add(publicar);
+									formComentario.add(formContainer);
+									comentarios.add(formComentario);
+									//Al enviar el formulario
+									publicar.addClickHandler(new ClickHandler(){
+										public void onClick(ClickEvent event) {
+											publicarComentario(comentario.getText(),id);
+										}
+									});
 								}
-							});
-						}
-					}
-				});
-			}			
+							}
+						});
+					}							
+				}
+			});	
 		}
 		
 		private void loadBigNoticia(Integer id_noticia) {
+			final Integer id = id_noticia;
 			servicioNoticias.cargarBigNoticia(id_noticia, new AsyncCallback<String[]>(){
 				public void onFailure(Throwable caught){
 					Window.alert("Error al cargar la noticia");
@@ -166,7 +187,15 @@ public class Noticias implements Pagina{
 					main.clear();
 					main.add(portada);
 					main.add(comentarios);
-					loadComentarios(2);
+					loadComentarios(id);
+					//Aumentar las visitas de la noticia
+					servicioNoticias.aumentarVisitas(id, new AsyncCallback<Integer>(){
+						public void onFailure(Throwable caught) {
+							Window.alert("Error al aumentar las visitas de la noticia");
+						}
+						public void onSuccess(Integer result) {
+						}
+					});
 				}
 			});		
 		}
@@ -219,27 +248,65 @@ public class Noticias implements Pagina{
 			nav.add(titulo);
 			noticiasNav.add(nav);
 			noticias = Layout.createDivWithId("noticias-1");
-			loadNoticia(2);
+			servicioNoticias.ultimasNoticias(new AsyncCallback<Integer[]>() {
+				public void onFailure(Throwable caught) {
+					Window.alert("Error al obtener las noticias");
+				}
+				public void onSuccess(Integer[] result) {
+					for(int i = 0; i < result.length; i++) {
+						if (result[i] != null)
+							loadNoticia(result[i]);
+					}
+				}
+			});
+			//loadNoticia(2);
 			sideBar.add(noticiasNav);
 			sideBar.add(noticias);
 		}
 		
-		private void publicarComentario(String comentario) {
+		private void publicarComentario(String comentario, Integer id_noticia) {
 			//TODO Guardar comentario en la BD y al regresar refrescar los comentarios
-			Window.alert(comentario);
+			Integer id_usuario = Integer.parseInt(Cookies.getCookie("id_usuario"));
+			final Integer id = id_noticia;
+			servicioComentarios.publicarComentario(comentario,id_noticia,id_usuario, new AsyncCallback<Integer>() {
+				public void onFailure(Throwable caught) {
+					Window.alert("Error al publicar el comentario");
+				}
+				public void onSuccess(Integer result) {
+					if (result == 1) {
+						Window.alert("El comentario ha sido publicado");
+						loadComentarios(id);
+					}
+					else 
+						Window.alert("Error al publicar el comentario");
+				}
+			});
 		}
 		
-			
-		public void display() {
-					
+		public void displayConNoticia(Integer id_noticia) {
 			main = Layout.createDiv("grid_8", "main");
 			sideBar = Layout.createDiv("grid_4", "sideBar");
 			comentarios = Layout.createDivWithId("comentarios");
-			main.add(loadPortada());
-			main.add(comentarios);
+			loadBigNoticia(id_noticia);
 			loadSideBar();
 			RootPanel.get("contenido").clear();
 			RootPanel.get("contenido").add(main);
 			RootPanel.get("contenido").add(sideBar);
+		}
+			
+		public void display(Integer id) {
+					
+			if (id != 0)
+				displayConNoticia(id);
+			else {
+				main = Layout.createDiv("grid_8", "main");
+				sideBar = Layout.createDiv("grid_4", "sideBar");
+				comentarios = Layout.createDivWithId("comentarios");
+				loadPortada();
+				loadSideBar();
+				RootPanel.get("contenido").clear();
+				RootPanel.get("contenido").add(main);
+				RootPanel.get("contenido").add(sideBar);
+			}
 		}
 }

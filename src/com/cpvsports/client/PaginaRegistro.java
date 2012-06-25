@@ -9,6 +9,7 @@ import com.google.gwt.user.client.ui.VerticalPanel;
 import com.google.gwt.user.client.ui.TextBox;
 import com.google.gwt.user.client.ui.PasswordTextBox;
 import com.google.gwt.user.client.ui.Anchor;
+import com.google.gwt.user.client.ui.Label;
 import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
 import com.google.gwt.user.client.ui.FormPanel.SubmitEvent;
@@ -27,35 +28,45 @@ public class PaginaRegistro implements Pagina {
 	
 	//private EntityManagerFactory factory = Persistence.createEntityManagerFactory("CpvSports");
 	
-	public void display() {
+	public void display(Integer id) {
 		RootPanel.get("contenido").clear();
 		FlowPanel contenido = Layout.createDiv("grid_12", "registro");
 		registro = new FormPanel();
-		VerticalPanel contenedorRegistro = new VerticalPanel();
+		registro.setStyleName("registrar");
+		FlowPanel contenedorRegistro = new FlowPanel();
 		
+		Label nombreLabel = new Label("Nombre");
 		nombre = new TextBox();
 		nombre.getElement().setAttribute("placeholder", "Nombre");
 		
+		Label emailLabel = new Label("Email");
 		email = new TextBox();
 		email.getElement().setAttribute("placeholder", "Email");
 		
+		Label passwordLabel = new Label("Contaseña");
 		password = new PasswordTextBox();
 		password.getElement().setAttribute("placeholder", "Contraseña");
 		
+		Label passwordConfLabel = new Label("Confirmación");
 		passwordConf = new PasswordTextBox();
 		passwordConf.getElement().setAttribute("placeholder", "Confirmación");
 		
 		Anchor boton = new Anchor("Registrar");
+		boton.setStyleName("button");
 		
+		contenedorRegistro.add(nombreLabel);
 		contenedorRegistro.add(nombre);
+		contenedorRegistro.add(emailLabel);
 		contenedorRegistro.add(email);
+		contenedorRegistro.add(passwordLabel);
 		contenedorRegistro.add(password);
+		contenedorRegistro.add(passwordConfLabel);
 		contenedorRegistro.add(passwordConf);
 		contenedorRegistro.add(boton);
 		
 		registro.add(contenedorRegistro);
 		
-		HTML titulo = new HTML("<h2>Nuevo redactor</h2>");
+		HTML titulo = new HTML("<h2>Nuevo usuario</h2>");
 		contenido.add(titulo);
 		contenido.add(registro);
 		RootPanel.get("contenido").add(contenido);

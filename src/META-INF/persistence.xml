@@ -7,6 +7,7 @@
 		<class>com.cpvsports.server.Sesione</class>
 		<class>com.cpvsports.server.Usuario</class>
 		<class>com.cpvsports.server.Noticia</class>
+		<class>com.cpvsports.server.ComentariosOnline</class>
 		<exclude-unlisted-classes>false</exclude-unlisted-classes>
 		<properties>
 		<property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/cpv_db"/>

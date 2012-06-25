@@ -3,7 +3,7 @@ package com.cpvsports.client;
 import com.google.gwt.user.client.rpc.AsyncCallback;
 
 public interface LoginServiceAsync {
-	void loguear(String usuario, String password, AsyncCallback<Integer> callback)
+	void loguear(String usuario, String password, AsyncCallback<Integer[]> callback)
 			throws IllegalArgumentException;
 	void logout(String id_sesion,AsyncCallback<Integer> callback)
 			throws IllegalArgumentException;

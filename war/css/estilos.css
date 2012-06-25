@@ -2601,7 +2601,9 @@ html, body {
 
  
  .noticia img {
-     float:left;    
+     float:left;
+     width:140px;
+     height:85px;    
  }
  
  .contenidoNoticia p {
@@ -2614,6 +2616,7 @@ html, body {
      line-height: 25px;
      margin-bottom: 5px;
      color: #292929;
+     cursor: pointer;
  }
  
  
@@ -2792,6 +2795,12 @@ html, body {
  
  .comentario .texto {
  	padding-left:30px;
+ 	padding-bottom: 10px;
+ 	margin-right: 50px;
+ }
+ 
+ .comentario .button {
+ 	margin-right: 5px;
  }
  
  .comentario .fecha {
@@ -2806,6 +2815,10 @@ html, body {
  	width:85%;
  	resize: none;
  	height: 45px;
+ }
+ 
+ #sideBar form.publicarComentario textarea {
+ 	width: 70%;
  }
  
  /****************** FIN COMENTARIOS NOTICIAS ************/
@@ -3020,5 +3033,72 @@ ul.aboutGallery a {
  
  /********************** FIN PAGINA CONTACTO ******************/
  
+ /******************** PUBLICAR UNA NOTICIA ************/
  
+ form.publicar {
+ 	padding:20px;
+ }
+ 
+ form.publicar h4 {
+ 	text-align: center;
+ 	font-weight: bold;
+ 	font-size: 50px;
+ }
+ 
+ form.publicar button {
+ 	display:block;
+ 	float: right;
+ 	margin-top: 30px;
+ 	margin-right: 130px;
+ }
+ 
+ form.publicar .gwt-Label {
+ 	font-size: 28px;
+ 	padding: 20px;
+ }
+ 
+ form.publicar select {
+ 	width: 86%;
+ }
+ 
+ form.publicar input {
+ 	width: 85%;
+ }
+ 
+ form.publicar textarea {
+ 	resize: none;
+ 	width: 85%;
+ 	height: 140px;
+ }
+ 
+ /****************** FIN PUBLICAR ********************/
+ 
+ /********************** NUEVO USUARIO ****************/
+ #registro h2{
+  	text-align: center;
+ 	font-weight: bold;
+ 	font-size: 50px;
+ 	padding: 10px;
+ }
+ 
+ form.registrar .gwt-Label {
+ 	font-size: 28px;
+ 	padding: 20px;
+ }
+ 
+ form.registrar .button {
+	display: block;
+	width:42px;
+	float:none;
+	margin-left: 20px;
+	margin-top: 20px;
+ }
+ 
+  form.registrar input {
+ 	width: 85%;
+ 	margin-left: 20px;
+ }
+ 
+ 
+ /********************** FIN NUEVO USUARIO******************/
  

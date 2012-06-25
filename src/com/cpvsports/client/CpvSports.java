@@ -39,12 +39,12 @@ public class CpvSports implements EntryPoint {
 		Footer footer = new Footer();
 		BreadCrumbs bc = new BreadCrumbs();
 		Pagina contenido = new Home();
-		header.display();
+		header.display(0);
 		menu.construct("home");
 		String enlaces[] = new String[1];
 		enlaces[0] = "Home";
 		bc.construct(enlaces);
-		contenido.display();
+		contenido.display(0);
 		footer.display();
 	}
 }

@@ -21,7 +21,7 @@ public class Noticia implements Serializable {
     @Lob()
 	private String contenido;
 
-    @Temporal( TemporalType.DATE)
+    @Temporal( TemporalType.TIMESTAMP)
 	private Date fecha;
 
 	@Column(name="id_categoria")

@@ -48,10 +48,10 @@ public class Header {
 		}
 		Menu menu = new Menu();
 		menu.construct("none");
-		contenido.display();
+		contenido.display(0);
 	}
 	
-	public void display() {
+	public void display(Integer id) {
 		//Logo
 		FlowPanel headerLogo = Layout.createDiv("grid_7", "headerLogo");
 		//Crear titulo
@@ -183,6 +183,7 @@ public class Header {
 			}
 			public void onSuccess(Integer result) {
 				Cookies.removeCookie("id_sesion");
+				Cookies.removeCookie("id_usuario");
 				//Volver a cargar la pagina
 				Layout.reload();
 			}
@@ -192,16 +193,17 @@ public class Header {
 	private void loguear() {
 		String usuarioT = email.getText();
 		String passwordT = password.getText();
-		servicioLogin.loguear(usuarioT, passwordT, new AsyncCallback<Integer>() {
+		servicioLogin.loguear(usuarioT, passwordT, new AsyncCallback<Integer[]>() {
 			public void onFailure(Throwable caught) {
 				Window.alert("Error en el login, vuelva a intentarlo.");
 			}
-			public void onSuccess(Integer result) {
-				if (result == 0) {
+			public void onSuccess(Integer[] result) {
+				if (result[0] == 0) {
 					Window.alert("El usuario o contraseña no son correctos");
 				}
 				else {
-					Cookies.setCookie("id_sesion", result.toString());
+					Cookies.setCookie("id_sesion", result[0].toString());
+					Cookies.setCookie("id_usuario", result[1].toString());
 					//TODO cambiar formuario de inicio de sesion por nombre y cerrar sesion
 					Layout.reload();
 				}

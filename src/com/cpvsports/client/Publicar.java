@@ -5,11 +5,12 @@ import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.rpc.AsyncCallback;
 import com.google.gwt.user.client.ui.RootPanel;
 import com.google.gwt.user.client.ui.FormPanel;
-import com.google.gwt.user.client.ui.VerticalPanel;
+import com.google.gwt.user.client.ui.FlowPanel;
 import com.google.gwt.user.client.ui.TextBox;
 import com.google.gwt.user.client.ui.TextArea;
 import com.google.gwt.user.client.ui.ListBox;
 import com.google.gwt.user.client.ui.Label;
+import com.google.gwt.user.client.ui.HTML;
 import com.google.gwt.user.client.ui.Button;
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.event.dom.client.ClickEvent;
@@ -24,9 +25,11 @@ public class Publicar implements Pagina{
 	private TextArea contenido;
 	private ListBox categoria;
 	
-	public void display() {
+	public void display(Integer id) {
 		FormPanel formulario = new FormPanel();
-		VerticalPanel contenidoFormulario = new VerticalPanel();
+		FlowPanel contenidoFormulario = new FlowPanel();
+		
+		HTML tituloForm = new HTML("<h4>Publicar una noticia</h4>");
 		
 		//Titulo
 		titulo = new TextBox();
@@ -54,6 +57,7 @@ public class Publicar implements Pagina{
 			}
 		});
 		
+		contenidoFormulario.add(tituloForm);
 		contenidoFormulario.add(tituloLabel);
 		contenidoFormulario.add(titulo);
 		contenidoFormulario.add(imagenLabel);
@@ -65,7 +69,7 @@ public class Publicar implements Pagina{
 		contenidoFormulario.add(enviar);
 		
 		formulario.add(contenidoFormulario);
-		
+		formulario.setStyleName("publicar");
 		RootPanel.get("contenido").clear();
 		RootPanel.get("contenido").add(formulario);
 	}

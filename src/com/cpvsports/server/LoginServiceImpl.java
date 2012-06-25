@@ -10,7 +10,8 @@ import com.google.gwt.user.server.rpc.RemoteServiceServlet;
 @SuppressWarnings("serial")
 public class LoginServiceImpl extends RemoteServiceServlet implements
 LoginService {
-	public Integer loguear(String usuario, String password) {
+	public Integer[] loguear(String usuario, String password) {
+		Integer result[] = new Integer[2];
 		Usuario user = Usuario.getUsuarioByName(usuario);
 		if (user.getPassword().equals(password)) {
 			EntityManagerFactory factory = Persistence.createEntityManagerFactory("CpvSports");
@@ -22,9 +23,13 @@ LoginService {
 			em.getTransaction().commit();
 			Integer sesionId = sesion.getId();
 			em.close();
-			return sesionId;
+			result[0] = sesionId;
+			result[1] = user.getId();
+			return result;
 		}
-		return 0;
+		result[0] = 0;
+		result[1] = 0;
+		return result;
 	}
 	public Integer logout(String id_sesion) {
 		EntityManagerFactory factory = Persistence.createEntityManagerFactory("CpvSports");

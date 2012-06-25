@@ -7,4 +7,7 @@ public interface NoticiasServiceAsync {
 	public void publicar(String[] campos, AsyncCallback<Integer> callback);
 	public void cargarNoticia(Integer id_noticia, AsyncCallback<String[]> callback);
 	public void cargarBigNoticia(Integer id_noticia, AsyncCallback<String[]> callback);
+	public void ultimasNoticias(AsyncCallback<Integer[]> callback);
+	public void aumentarVisitas(Integer id_noticia, AsyncCallback<Integer> callback);
+	public void noticiasMasVistas(AsyncCallback<Integer[]> callback);
 }
