@@ -1,5 +1,11 @@
 package com.cpvsports.shared;
 
+import com.cpvsports.client.RegistrarService;
+import com.cpvsports.client.RegistrarServiceAsync;
+import com.google.gwt.core.client.GWT;
+import com.google.gwt.user.client.Window;
+import com.google.gwt.user.client.rpc.AsyncCallback;
+
 /**
  * <p>
  * FieldVerifier validates that the name the user enters is valid.
@@ -33,10 +39,13 @@ public class FieldVerifier {
 	 * @param name the name to validate
 	 * @return true if valid, false if invalid
 	 */
-	public static boolean isValidName(String name) {
-		if (name == null) {
+	
+	
+	public static boolean isValidPassword(String password) {
+		if (password == null) {
 			return false;
 		}
-		return name.length() > 3;
+		return password.length() > 5;
 	}
+	
 }

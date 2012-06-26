@@ -3039,33 +3039,43 @@ ul.aboutGallery a {
  	padding:20px;
  }
  
- form.publicar h4 {
+ #miCuenta {
+ 	padding: 20px;
+ }
+ 
+ form.publicar h4, form.editar h4 {
  	text-align: center;
  	font-weight: bold;
  	font-size: 50px;
  }
  
- form.publicar button {
+ #miCuenta h4 {
+ 	text-align: center;
+ 	font-weight: bold;
+ 	font-size: 50px; 
+ }
+ 
+ form.publicar button, form.editar button, form.registrar button {
  	display:block;
  	float: right;
  	margin-top: 30px;
  	margin-right: 130px;
  }
  
- form.publicar .gwt-Label {
+ form.publicar .gwt-Label, form.editar .gwt-Label{
  	font-size: 28px;
  	padding: 20px;
  }
  
- form.publicar select {
+ form.publicar select, form.editar select {
  	width: 86%;
  }
  
- form.publicar input {
+ form.publicar input, form.editar input {
  	width: 85%;
  }
  
- form.publicar textarea {
+ form.publicar textarea, form.editar textarea {
  	resize: none;
  	width: 85%;
  	height: 140px;

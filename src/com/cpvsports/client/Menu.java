@@ -90,7 +90,9 @@ public class Menu {
 			String enlaces[] = new String[1];
 			enlaces[0] = "Mi cuenta";
 			bc.construct(enlaces);
+			Pagina cuenta = new MiCuenta();
 			Titulo.setTitulo("Mi cuenta");
+			cuenta.display(0);
 		}
 	}	
 	

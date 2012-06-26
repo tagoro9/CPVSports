@@ -3,8 +3,10 @@ package com.cpvsports.server;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
+import javax.persistence.Query;
 
 import java.sql.Date;
+import java.util.List;
 
 import com.cpvsports.shared.FieldVerifier;
 
@@ -64,6 +66,58 @@ public class RegistrarServiceImpl extends RemoteServiceServlet implements
 		return html.replaceAll("&", "&amp;").replaceAll("<", "&lt;")
 				.replaceAll(">", "&gt;");
 	}
+	
+	public String[] getInfo(Integer id_usuario) {
+		String info[] = new String[2];
+		EntityManagerFactory factory = Persistence.createEntityManagerFactory("CpvSports");
+		EntityManager em = factory.createEntityManager();
+		Usuario u = em.find(Usuario.class, id_usuario);
+		info[0] = u.getNombre();
+		info[1] = u.getEmail();
+		return info;
+	}
+	
+	public String actualizar(Integer id_usuario, String[] input) {
+		EntityManagerFactory factory = Persistence.createEntityManagerFactory("CpvSports");
+		EntityManager em = factory.createEntityManager();
+		em.getTransaction().begin();
+		Usuario u = em.find(Usuario.class, id_usuario);
+		u.setNombre(input[0]);
+		u.setEmail(input[1]);
+		u.setPassword(input[3]);
+		em.getTransaction().commit();
+		em.close();
+		return "El usuario se ha actualizado";
+	}
+	
+	public Integer isValidEmail(String email) {
+		EntityManagerFactory factory = Persistence.createEntityManagerFactory("CpvSports");
+		EntityManager em = factory.createEntityManager();
+		List<Usuario> usuariosRegistrados;
+		Query q = em.createQuery("select u from Usuario u");
+		usuariosRegistrados = q.getResultList();
+		em.close();
+		for (Usuario a : usuariosRegistrados) {
+			if (a.getEmail().toString().equals(email))
+				return 0;
+		}
+		return 1;
+	}
+	
+	public Integer isValidName(String name) {
+		EntityManagerFactory factory = Persistence.createEntityManagerFactory("CpvSports");
+		EntityManager em = factory.createEntityManager();
+		List<Usuario> usuariosRegistrados;
+		Query q = em.createQuery("select u from Usuario u");
+		usuariosRegistrados = q.getResultList();
+		em.close();
+		for (Usuario a : usuariosRegistrados) {
+			if (a.getNombre().toString().equals(name))
+				return 0;
+		}
+		return 1;
+	}
+	
 }
 
 
@@ -85,11 +139,7 @@ try {
 }
 //Comprobar que el email o el usuario no esta registrado
 try {
-	for (Usuario a : usuariosRegistrados) {
-		if (a.getNombre().toString().equals(nombre))
-			throw new IllegalArgumentException("El nombre de usuario ya existe.");
-		if (a.getEmail().toString().equals(email))
-			throw new IllegalArgumentException("El email ya existe.");
+
 	}
 } catch (IllegalArgumentException e) {
 	return (e.getMessage());

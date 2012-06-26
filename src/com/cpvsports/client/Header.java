@@ -105,7 +105,7 @@ public class Header {
 			Anchor submit = new Anchor("Entrar");
 			submit.setStyleName("button");
 			
-			email.getElement().setAttribute("placeholder", "Email");
+			email.getElement().setAttribute("placeholder", "Nombre");
 			password.getElement().setAttribute("placeholder", "Contraseña");
 			
 			loginForm.getElement().setId("loginForm");
@@ -204,7 +204,6 @@ public class Header {
 				else {
 					Cookies.setCookie("id_sesion", result[0].toString());
 					Cookies.setCookie("id_usuario", result[1].toString());
-					//TODO cambiar formuario de inicio de sesion por nombre y cerrar sesion
 					Layout.reload();
 				}
 			}
