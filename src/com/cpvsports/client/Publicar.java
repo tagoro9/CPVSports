@@ -84,15 +84,15 @@ public class Publicar implements Pagina{
 		if (!campos[0].equals("") && !campos[1].equals("") && !campos[2].equals("")) {
 			servicioNoticias.publicar(campos, new AsyncCallback<Integer>(){
 				public void onFailure(Throwable caught) {
-					Window.alert("Error al publicar la noticia");
+					Notificaciones.error("Error al publicar la noticia");
 				}
 				public void onSuccess(Integer result) {
-					Window.alert("La noticia se ha publicado correctamente");
+					Notificaciones.success("La noticia se ha publicado correctamente");
 				}
 			});
 		}
 		else {
-			Window.alert("La noticia no puede tener campos vacíos");
+			Notificaciones.error("La noticia no puede tener campos vacíos");
 		}
 	}
 }

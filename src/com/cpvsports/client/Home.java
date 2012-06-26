@@ -60,14 +60,14 @@ public class Home implements Pagina {
 	private void loadPortada() {
 		servicioNoticias.ultimasNoticias(new AsyncCallback<Integer[]>() {
 			public void onFailure(Throwable caught) {
-				Window.alert("Error al cargar la portada");
+				Notificaciones.error("Error al cargar la portada");
 			}
 			public void onSuccess(Integer[] result) {
 				if (result[0] != null) {
 					final Integer id = result[0];
 					servicioNoticias.cargarBigNoticia(id, new AsyncCallback<String[]>(){
 						public void onFailure(Throwable caught){
-							Window.alert("Error al cargar la noticia");
+							Notificaciones.error("Error al cargar la noticia");
 						}
 						public void onSuccess(String[] result){
 							
@@ -76,6 +76,7 @@ public class Home implements Pagina {
 							FlowPanel portada = Layout.createDivWithId("portada");
 							//Imagen
 							Image imagenPortada = new Image(result[4]);
+							imagenPortada.getElement().setAttribute("alt", "imagen portada");
 							//Titular
 							FlowPanel titularPortada = Layout.createDivWithId("titularPortada");
 							//Crear contenido del titular
@@ -106,7 +107,7 @@ public class Home implements Pagina {
 							});
 							//Contenido
 							HTML titularContenido = new HTML();
-							titularContenido.setHTML("<p>" + result[1] +"</p>");
+							titularContenido.setHTML("<p>" + result[1].substring(0, 200) +"...</p>");
 							titularPortada.add(fecha);
 							titularPortada.add(titular);
 							titularPortada.add(titularContenido);
@@ -118,7 +119,7 @@ public class Home implements Pagina {
 							//Aumentar las visitas de la noticia
 							servicioNoticias.aumentarVisitas(id, new AsyncCallback<Integer>(){
 								public void onFailure(Throwable caught) {
-									Window.alert("Error al aumentar las visitas de la noticia");
+									Notificaciones.error("Error al aumentar las visitas de la noticia");
 								}
 								public void onSuccess(Integer result) {
 								}
@@ -127,7 +128,7 @@ public class Home implements Pagina {
 					});							
 				}
 				else
-					Window.alert("No hay noticias");
+					Notificaciones.alert("No hay noticias");
 			}
 		});
 	}
@@ -137,7 +138,7 @@ public class Home implements Pagina {
 		final Integer id = id_noticia;
 		servicioNoticias.cargarBigNoticia(id_noticia, new AsyncCallback<String[]> () {
 			public void onFailure (Throwable caught) {
-				Window.alert("Fallo al cargar noticia");
+				Notificaciones.error("Fallo al cargar noticia");
 			}
 			
 			public void onSuccess (String[] result) {
@@ -145,6 +146,7 @@ public class Home implements Pagina {
 				//Imagen
 				FlowPanel imagenNoticiaContainer = Layout.createDiv("imagenNoticia grid_2");
 				Image imagenNoticia = new Image(result[4]);
+				imagenNoticia.getElement().setAttribute("alt", "imagen noticia");
 				imagenNoticiaContainer.add(imagenNoticia);
 				//Contenido
 				FlowPanel contenidoNoticia = Layout.createDiv("contenidoNoticia grid_5");
@@ -174,7 +176,7 @@ public class Home implements Pagina {
 				});
 				//Texto
 				HTML texto = new HTML();
-				texto.setHTML("<p>"+ result[1] +"</p>");
+				texto.setHTML("<p>"+ result[1].substring(0, 100) +"...</p>");
 				contenidoNoticia.add(fecha);
 				contenidoNoticia.add(titulo);
 				contenidoNoticia.add(texto);
@@ -232,7 +234,7 @@ public class Home implements Pagina {
 		listadoNoticias.clear();
 		servicioNoticias.ultimasNoticias(new AsyncCallback<Integer[]> (){
 			public void onFailure (Throwable caught) {
-				Window.alert("Fallo al cargar ultimas noticias");
+				Notificaciones.error("Fallo al cargar ultimas noticias");
 			}
 			
 			public void onSuccess (Integer[] result) {
@@ -249,7 +251,7 @@ public class Home implements Pagina {
 		listadoNoticias.clear();
 		servicioNoticias.noticiasMasVistas(new AsyncCallback<Integer[]> (){
 			public void onFailure (Throwable caught) {
-				Window.alert("Fallo al cargar ultimas noticias");
+				Notificaciones.error("Fallo al cargar ultimas noticias");
 			}
 			
 			public void onSuccess (Integer[] result) {

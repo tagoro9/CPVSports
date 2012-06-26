@@ -33,13 +33,13 @@ public class Noticias implements Pagina{
 		private void loadPortada() {
 			servicioNoticias.ultimasNoticias(new AsyncCallback<Integer[]>() {
 				public void onFailure(Throwable caught) {
-					Window.alert("Error al cargar la portada");
+					Notificaciones.error("Error al cargar la portada");
 				}
 				public void onSuccess(Integer[] result) {
 					if (result[0] != null)
 						loadBigNoticia(result[0]);
 					else
-						Window.alert("No hay noticias");
+						Notificaciones.alert("No hay noticias");
 				}
 			});
 		}
@@ -48,7 +48,7 @@ public class Noticias implements Pagina{
 			final Integer id = id_comentario;
 			servicioComentarios.loadComentario(id_comentario, new AsyncCallback<String[]>(){
 				public void onFailure(Throwable caught) {
-					Window.alert("Error al cargar el comentario");
+					Notificaciones.error("Error al cargar el comentario");
 				}
 				public void onSuccess(String[] result) {
 					FlowPanel comentario = Layout.createDiv("comentario");
@@ -81,7 +81,7 @@ public class Noticias implements Pagina{
 		private void borrarComentario(Integer id_comentario){
 			servicioComentarios.borrarComentario(id_comentario, new AsyncCallback<Integer>() {
 				public void onFailure(Throwable caught) {
-					Window.alert("Error al borrar el comentario");
+					Notificaciones.error("Error al borrar el comentario");
 				}
 				public void onSuccess(Integer result) {
 					loadComentarios(result);
@@ -104,7 +104,7 @@ public class Noticias implements Pagina{
 			comentarios.add(comentariosNavContainer);
 			servicioComentarios.getComentarios(id_noticia, new AsyncCallback<Integer[]>() {
 				public void onFailure(Throwable caught) {
-					Window.alert("Error al cargar los comentarios");
+					Notificaciones.error("Error al cargar los comentarios");
 				}
 				public void onSuccess(Integer[] result) {
 					for (int i = 0; i < result.length; i++) {
@@ -114,7 +114,7 @@ public class Noticias implements Pagina{
 					if (Cookies.getCookie("id_sesion") != null) {
 						servicioLogin.isLogged(Cookies.getCookie("id_sesion"), new AsyncCallback<String>() {
 							public void onFailure(Throwable caught) {
-								Window.alert("Imposible conectar con el servidor");
+								Notificaciones.error("Imposible conectar con el servidor");
 							}
 							public void onSuccess(String result) {
 								if (result != null) { //Si esta logueado se crea el formulario
@@ -149,7 +149,7 @@ public class Noticias implements Pagina{
 			final Integer id = id_noticia;
 			servicioNoticias.cargarBigNoticia(id_noticia, new AsyncCallback<String[]>(){
 				public void onFailure(Throwable caught){
-					Window.alert("Error al cargar la noticia");
+					Notificaciones.error("Error al cargar la noticia");
 				}
 				public void onSuccess(String[] result){
 					//BreadCrumbs y titulo
@@ -164,6 +164,7 @@ public class Noticias implements Pagina{
 					FlowPanel portada = Layout.createDivWithId("portada");
 					//Imagen
 					Image imagenPortada = new Image(result[4]);
+					imagenPortada.getElement().setAttribute("alt", "imagen portada");
 					//Titular
 					FlowPanel titularPortada = Layout.createDivWithId("titularPortada");
 					//Crear contenido del titular
@@ -191,7 +192,7 @@ public class Noticias implements Pagina{
 					//Aumentar las visitas de la noticia
 					servicioNoticias.aumentarVisitas(id, new AsyncCallback<Integer>(){
 						public void onFailure(Throwable caught) {
-							Window.alert("Error al aumentar las visitas de la noticia");
+							Notificaciones.error("Error al aumentar las visitas de la noticia");
 						}
 						public void onSuccess(Integer result) {
 						}
@@ -203,7 +204,7 @@ public class Noticias implements Pagina{
 		private void loadNoticia(Integer id_noticia) {
 			servicioNoticias.cargarNoticia(id_noticia, new AsyncCallback<String[]>(){
 				public void onFailure(Throwable caught) {
-					Window.alert("error al cargar la noticia");
+					Notificaciones.error("error al cargar la noticia");
 				}
 				public void onSuccess(String[] result) {
 					FlowPanel noticia = Layout.createDiv("noticia1");
@@ -227,7 +228,7 @@ public class Noticias implements Pagina{
 					      }
 					});
 					HTML contenido = new HTML();
-					contenido.setHTML("<p>"+result[1]+"<p>");
+					contenido.setHTML("<p>"+result[1].substring(0, 100)+"...<p>");
 					contenidoNoticia.add(fechaContenedor);
 					contenidoNoticia.add(titulo);
 					contenidoNoticia.add(contenido);
@@ -250,7 +251,7 @@ public class Noticias implements Pagina{
 			noticias = Layout.createDivWithId("noticias-1");
 			servicioNoticias.ultimasNoticias(new AsyncCallback<Integer[]>() {
 				public void onFailure(Throwable caught) {
-					Window.alert("Error al obtener las noticias");
+					Notificaciones.error("Error al obtener las noticias");
 				}
 				public void onSuccess(Integer[] result) {
 					for(int i = 0; i < result.length; i++) {
@@ -270,15 +271,15 @@ public class Noticias implements Pagina{
 			final Integer id = id_noticia;
 			servicioComentarios.publicarComentario(comentario,id_noticia,id_usuario, new AsyncCallback<Integer>() {
 				public void onFailure(Throwable caught) {
-					Window.alert("Error al publicar el comentario");
+					Notificaciones.error("Error al publicar el comentario");
 				}
 				public void onSuccess(Integer result) {
 					if (result == 1) {
-						Window.alert("El comentario ha sido publicado");
+						Notificaciones.success("El comentario ha sido publicado");
 						loadComentarios(id);
 					}
 					else 
-						Window.alert("Error al publicar el comentario");
+						Notificaciones.error("Error al publicar el comentario");
 				}
 			});
 		}

@@ -49,7 +49,7 @@ public class EnVivo implements Pagina {
 		comentarios.clear();
 		servicioComentarios.cargarComentarios(new AsyncCallback<Integer[]>(){
 			public void onFailure(Throwable caught){
-				Window.alert("Error al cargar los comentarios");
+				Notificaciones.error("Error al cargar los comentarios");
 			}
 			public void onSuccess(Integer[] result){
 				for (int i=0; i<result.length; i++ ){
@@ -65,7 +65,7 @@ public class EnVivo implements Pagina {
 		final Integer id = id_comentario;
 		servicioComentarios.loadComentariosOnline(id_comentario, new AsyncCallback<String[]>(){
 			public void onFailure(Throwable caught) {
-				Window.alert("Error al cargar el comentario");
+				Notificaciones.error("Error al cargar el comentario");
 			}
 			public void onSuccess(String[] result) {
 				FlowPanel comentario = Layout.createDiv("comentario");
@@ -126,15 +126,15 @@ public class EnVivo implements Pagina {
 			id_usuario = Integer.parseInt(Cookies.getCookie("id_sesion"));
 		servicioComentarios.publicarComentarioOnline(text,id_usuario, new AsyncCallback<Integer>() {
 			public void onFailure(Throwable caught) {
-				Window.alert("Error al publicar el comentario Online");
+				Notificaciones.error("Error al publicar el comentario Online");
 			}
 			public void onSuccess(Integer result) {
 				if (result == 1) {
-					Window.alert("El comentario Online ha sido publicado");
+					Notificaciones.success("El comentario Online ha sido publicado");
 					loadComentarios();
 				}
 				else 
-					Window.alert("Error al publicar el comentario Online");
+					Notificaciones.error("Error al publicar el comentario Online");
 			}
 		});
 	}

@@ -40,7 +40,7 @@ public class MiCuenta implements Pagina{
 		final String datos[] = new String[2];
 		servicioRegistro.getInfo(Integer.parseInt(Cookies.getCookie("id_usuario")), new AsyncCallback<String[]>(){
 			public void onFailure(Throwable caught) {
-				Window.alert("Error al cargar la información el usuario");
+				Notificaciones.error("Error al cargar la información el usuario");
 			}
 			public void onSuccess(String[] result) {
 				nombre.getElement().setAttribute("value", result[0]);
@@ -111,43 +111,43 @@ public class MiCuenta implements Pagina{
 			//Nombre
 			servicioRegistro.isValidName(datos[0], new AsyncCallback<Integer>(){
 				public void onFailure(Throwable caugth) {
-					Window.alert("Error al comprobar el nombre");
+					Notificaciones.error("Error al comprobar el nombre");
 				}
 				public void onSuccess(Integer result) {
 					if (datos[0].equals(oldName) || (result != 0)) {
 						//Email
 						servicioRegistro.isValidEmail(datos[1], new AsyncCallback<Integer>(){
 							public void onFailure(Throwable caught) {
-								Window.alert("Error al comprobar el email");
+								Notificaciones.error("Error al comprobar el email");
 							}
 							public void onSuccess(Integer result) {
 								if (datos[1].equals(oldEmail) || result != 0) {
 									//Comprobar contraseña
 									servicioRegistro.actualizar(Integer.parseInt(Cookies.getCookie("id_usuario")), datos, new AsyncCallback<String>(){
 										public void onFailure(Throwable caught) {
-											Window.alert("Error al actualizar el usuario");
+											Notificaciones.error("Error al actualizar el usuario");
 										}
 										public void onSuccess(String result) {
-											Window.alert(result);
+											Notificaciones.success(result);
 											Header header = new Header();
 											header.display(0);
 										}
 									});
 								}
 								else {
-									Window.alert("El email no es válido");
+									Notificaciones.error("El email no es válido");
 								}
 							}
 						});
 					}
 					else {
-						Window.alert("El nombre no es válido");
+						Notificaciones.error("El nombre no es válido");
 					}
 				}
 			});
 		}
 		else {
-			Window.alert("La contraseña no es correcta (como mínimo ha de tener 6 caracteres)");
+			Notificaciones.error("La contraseña no es correcta (como mínimo ha de tener 6 caracteres)");
 		}
 	}
 }

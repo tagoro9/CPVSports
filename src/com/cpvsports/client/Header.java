@@ -146,7 +146,7 @@ public class Header {
 		else {
 			servicioLogin.isLogged(Cookies.getCookie("id_sesion"), new AsyncCallback<String>() {
 				public void onFailure(Throwable caught) {
-					Window.alert("Error al comprobar si el usuario esta logueado");
+					Notificaciones.error("Error al comprobar si el usuario esta logueado");
 				}
 				public void onSuccess(String result) {
 					if (result != null) {
@@ -179,7 +179,7 @@ public class Header {
 		//Borrar cookie y borrar entrada de la base de datos
 		servicioLogin.logout(Cookies.getCookie("id_sesion"), new AsyncCallback<Integer>() {
 			public void onFailure(Throwable caught) {
-				Window.alert("Error al cerrar la sesión");
+				Notificaciones.error("Error al cerrar la sesión");
 			}
 			public void onSuccess(Integer result) {
 				Cookies.removeCookie("id_sesion");
@@ -195,11 +195,11 @@ public class Header {
 		String passwordT = password.getText();
 		servicioLogin.loguear(usuarioT, passwordT, new AsyncCallback<Integer[]>() {
 			public void onFailure(Throwable caught) {
-				Window.alert("Error en el login, vuelva a intentarlo.");
+				Notificaciones.error("Error en el login, vuelva a intentarlo.");
 			}
 			public void onSuccess(Integer[] result) {
 				if (result[0] == 0) {
-					Window.alert("El usuario o contraseña no son correctos");
+					Notificaciones.error("El usuario o contraseña no son correctos");
 				}
 				else {
 					Cookies.setCookie("id_sesion", result[0].toString());

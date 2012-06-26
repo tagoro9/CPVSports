@@ -105,26 +105,26 @@ public class PaginaRegistro implements Pagina {
 			//servicioRegistro.greetServer("hoooola",new AsyncCallback<String>() {
 			servicioRegistro.isValidEmail(email.getText(), new AsyncCallback<Integer>(){
 				public void onFailure(Throwable caught) {
-					Window.alert("No se ha podido conectar con el servidor");
+					Notificaciones.error("No se ha podido conectar con el servidor");
 				}
 				public void onSuccess(Integer result) {
 					if (result != 0) {
 						servicioRegistro.isValidName(nombre.getText(), new AsyncCallback<Integer>(){
 							public void onFailure(Throwable caught) {
-								Window.alert("No se ha podido conectar con el servidor al comprobar el nombre");
+								Notificaciones.error("No se ha podido conectar con el servidor al comprobar el nombre");
 							}
 							public void onSuccess(Integer result) {
 								if (result != 0) {
 									servicioRegistro.registrar(input,new AsyncCallback<String>() {
 										public void onFailure(Throwable caught) {
-											Window.alert("Error en el registro, vuelva a intentarlo.");
+											Notificaciones.error("Error en el registro, vuelva a intentarlo.");
 										}
 										public void onSuccess(String result) {
 											String usuarioT = nombre.getText();
 											String passwordT = password.getText();
 											servicioLogin.loguear(usuarioT, passwordT, new AsyncCallback<Integer[]>() {
 												public void onFailure(Throwable caught) {
-													Window.alert("Error en el login, vuelva a intentarlo.");
+													Notificaciones.error("Error en el login, vuelva a intentarlo.");
 												}
 												public void onSuccess(Integer[] result) {
 													Cookies.setCookie("id_sesion", result[0].toString());
@@ -136,20 +136,20 @@ public class PaginaRegistro implements Pagina {
 									});
 								}
 								else {
-									Window.alert("El nombre ya existe");
+									Notificaciones.error("El nombre ya existe");
 								}
 							}
 						});
 					}
 						else {
-						Window.alert("El email ya existe");
+						Notificaciones.error("El email ya existe");
 					}
 
 				}
 			});
 		}
 		else{
-			Window.alert("La contraseña no es correcta, recuerda que ha de tener 6 caracteres como mínimo");
+			Notificaciones.error("La contraseña no es correcta, recuerda que ha de tener 6 caracteres como mínimo");
 		}
 	}
 }

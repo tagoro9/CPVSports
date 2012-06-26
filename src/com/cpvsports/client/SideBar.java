@@ -23,7 +23,8 @@ public class SideBar {
 		HTML fecha = new HTML();
 		fecha.setHTML("<span>27 JUL, 2012</span>");
 		//Imagen
-		Image imagenEvento = new Image("img/eventos.jpg");
+		Image imagenEvento = new Image("img/london.jpg");
+		imagenEvento.getElement().setAttribute("alt", "imagen eventos");
 		//Titulo
 		HTML tituloEvento = new HTML();
 		tituloEvento.setHTML("<h4>Juegos olímpicos 2012</h4>");
