@@ -2520,6 +2520,10 @@ html, body {
      margin-bottom: 5px;
  }
  
+ #titularPortada .principal {
+ 	cursor:pointer;
+ }
+ 
  div.fecha {
     background: url("../img/fecha.gif") repeat-x scroll 0 0 #141414;
     color: #FFFFFF;

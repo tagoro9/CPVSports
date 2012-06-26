@@ -86,6 +86,24 @@ public class Home implements Pagina {
 							//Titular
 							HTML titular = new HTML();
 							titular.setHTML("<h2>"+result[0]+"</h2>");
+							titular.setStyleName("principal");
+							final String tituloNoticia = result[0];
+							titular.addClickHandler(new ClickHandler(){
+								public void onClick(ClickEvent event) {
+							    	Titulo.setTitulo(tituloNoticia);
+							    	Header header = new Header();
+							    	Menu menu = new Menu();
+							    	BreadCrumbs bc = new BreadCrumbs();
+							    	Pagina noticias = new Noticias();
+							    	header.display(id);
+							    	menu.construct("noticias");
+							    	String[] enlaces = new String[2];
+							    	enlaces[0] = "Noticias";
+							    	enlaces[1] = tituloNoticia;
+							    	bc.construct(enlaces);
+							    	noticias.display(id);
+								}
+							});
 							//Contenido
 							HTML titularContenido = new HTML();
 							titularContenido.setHTML("<p>" + result[1] +"</p>");

@@ -21,7 +21,7 @@ public class BreadCrumbs {
 		panel.add(separador);
 		for (int i = 0; i < enlaces.length; i++) {
 			HTML sep = new HTML("&nbsp;>&nbsp;");
-			Anchor enlace = new Anchor(enlaces[i]);
+			HTML enlace = new HTML(enlaces[i]);
 			panel.add(enlace);
 			if (i != enlaces.length -1) {
 				panel.add(sep);
